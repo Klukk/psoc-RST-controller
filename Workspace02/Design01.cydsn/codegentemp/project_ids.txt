@@ -1,0 +1,7 @@
+C:\Users\Klukk-TP\Documents\tesis\Workspace02\Workspace02\Design01.cydsn\Design01.cyprj|5b17358c-a325-4c1e-b6f5-bc2fc2bf8eac
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|72c65c1a-97bf-4bdf-9942-304f6a195a09
+C:\Users\Klukk-TP\Documents\PSoC Creator\4.2\Downloads ( 4.2).cylib\Downloads ( 4.2).cyprj|1e4c3326-774c-4131-9fb3-233d74a466c8
+C:\Users\Klukk-TP\Documents\PSoC Creator\4.1\Downloads ( 4.1).cylib\Downloads ( 4.1).cyprj|63768bd3-1eec-4adc-95b5-6c09927459b2
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|62e51b27-86e0-4947-a4ae-5e03607e467b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|52bea954-8b07-4697-97c3-f66f078edb10
+C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|fb8d37b8-a25c-4be7-9b8e-4182dfddfd12

@@ -1,0 +1,120 @@
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/CortexM3/ARM_GCC_541/Debug/main.o : C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A1.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A1_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A2.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A2_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B1.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B1_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B2.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B2_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Clock_1.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyLib.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CySpc.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PWM.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmX.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmX_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmY.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmY_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/ResetPWM.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/ResetPWM_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Reset_Pin.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Reset_Pin_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenX.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenX_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenY.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenY_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/UART.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/UART_IntClock.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAx.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAx_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAy.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAy_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBx.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBx_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBy.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBy_aliases.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyPm.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydevice.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cypins.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cytypes.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrRx.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrX.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrXL.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrXP.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrY.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrYL.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrYP.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/project.h C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/main.c 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A1.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A1_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A2.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/A2_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B1.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B1_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B2.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/B2_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Clock_1.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyDmac.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyFlash.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CyLib.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/CySpc.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PWM.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmX.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmX_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmY.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/PwmY_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/ResetPWM.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/ResetPWM_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Reset_Pin.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/Reset_Pin_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenX.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenX_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenY.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/SenY_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/UART.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/UART_IntClock.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAx.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAx_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAy.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chAy_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBx.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBx_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBy.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/chBy_aliases.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_armcc.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_compiler.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cmsis_gcc.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/core_cm3.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/core_cm3_psoc5.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyPm.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cy_em_eeprom.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydevice.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydevice_trm.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cydisabledsheets.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyfitter.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cyfitter_cfg.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cypins.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/cytypes.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrRx.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrX.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrXL.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrXP.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrY.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrYL.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/isrYP.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/Generated_Source/PSoC5/project.h : 
+
+C:/Users/Klukk-TP/Documents/tesis/psoc/psoc\ RST/Design01.cydsn/main.c : 
+

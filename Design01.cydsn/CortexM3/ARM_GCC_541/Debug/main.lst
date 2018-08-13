@@ -1,0 +1,3888 @@
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.InterruptXL,"ax",%progbits
+  20              		.align	2
+  21              		.global	InterruptXL
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	InterruptXL, %function
+  25              	InterruptXL:
+  26              	.LFB64:
+  27              		.file 1 "main.c"
+   1:main.c        ****  /* ========================================
+   2:main.c        ****  *
+   3:main.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main.c        ****  * All Rights Reserved
+   5:main.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main.c        ****  *
+   7:main.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:main.c        ****  *
+  10:main.c        ****  * =======================================
+  11:main.c        **** */
+  12:main.c        **** #include "project.h"
+  13:main.c        **** #include <stdlib.h>
+  14:main.c        **** 
+  15:main.c        **** 
+  16:main.c        **** char datorecibido[10];
+  17:main.c        **** int counta=0,countb=0,pwmx=0,pwmy=0,i=0,x=0,MXV=0,MYV=0,MXV0=0,MYV0=0,MXV00=0,MYV00=0,retx,rety;
+  18:main.c        **** int KPX=0,KIX=0,rfaa,rfa,raa,rf,xxx;
+  19:main.c        **** double ssx=0,ssax=0,ssaax=0,sex=0,seax=0,seaax=0,refsx=0,refsax=0,refsaax=0,refex=0,refeax=0,refeaa
+  20:main.c        **** double retsx=0,retsax=0,retsaax=0,retex=0,reteax=0,reteaax=0;
+  21:main.c        **** double ssy=0,ssay=0,ssaay=0,sey=0,seay=0,seaay=0,refsy=0,refsay=0,refsaay=0,refey=0,refeay=0,refeaa
+  22:main.c        **** double retsy=0,retsay=0,retsaay=0,retey=0,reteay=0,reteaay=0;
+  23:main.c        **** char datoenviado[20];
+  24:main.c        **** char MX[2],MY[2],DX,DY;
+  25:main.c        **** 
+  26:main.c        **** 
+  27:main.c        **** CY_ISR(InterruptRX)
+  28:main.c        **** {datorecibido[i]=UART_GetChar();
+  29:main.c        **** i++;
+  30:main.c        **** if(i>=10){i=0;x=0;}}
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 2
+
+
+  31:main.c        **** 
+  32:main.c        **** CY_ISR(InterruptXL)
+  33:main.c        **** {counta++;}
+  28              		.loc 1 33 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 33 0
+  34 0000 024A     		ldr	r2, .L2
+  35 0002 1368     		ldr	r3, [r2]
+  36 0004 0133     		adds	r3, r3, #1
+  37 0006 1360     		str	r3, [r2]
+  38 0008 7047     		bx	lr
+  39              	.L3:
+  40 000a 00BF     		.align	2
+  41              	.L2:
+  42 000c 00000000 		.word	.LANCHOR0
+  43              		.cfi_endproc
+  44              	.LFE64:
+  45              		.size	InterruptXL, .-InterruptXL
+  46              		.section	.text.InterruptXP,"ax",%progbits
+  47              		.align	2
+  48              		.global	InterruptXP
+  49              		.thumb
+  50              		.thumb_func
+  51              		.type	InterruptXP, %function
+  52              	InterruptXP:
+  53              	.LFB65:
+  34:main.c        **** 
+  35:main.c        **** CY_ISR(InterruptXP)
+  36:main.c        **** {counta--;}
+  54              		.loc 1 36 0
+  55              		.cfi_startproc
+  56              		@ args = 0, pretend = 0, frame = 0
+  57              		@ frame_needed = 0, uses_anonymous_args = 0
+  58              		@ link register save eliminated.
+  59              		.loc 1 36 0
+  60 0000 024A     		ldr	r2, .L5
+  61 0002 1368     		ldr	r3, [r2]
+  62 0004 013B     		subs	r3, r3, #1
+  63 0006 1360     		str	r3, [r2]
+  64 0008 7047     		bx	lr
+  65              	.L6:
+  66 000a 00BF     		.align	2
+  67              	.L5:
+  68 000c 00000000 		.word	.LANCHOR0
+  69              		.cfi_endproc
+  70              	.LFE65:
+  71              		.size	InterruptXP, .-InterruptXP
+  72              		.section	.text.InterruptYL,"ax",%progbits
+  73              		.align	2
+  74              		.global	InterruptYL
+  75              		.thumb
+  76              		.thumb_func
+  77              		.type	InterruptYL, %function
+  78              	InterruptYL:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 3
+
+
+  79              	.LFB66:
+  37:main.c        **** 
+  38:main.c        **** CY_ISR(InterruptYL)
+  39:main.c        **** {countb++;}
+  80              		.loc 1 39 0
+  81              		.cfi_startproc
+  82              		@ args = 0, pretend = 0, frame = 0
+  83              		@ frame_needed = 0, uses_anonymous_args = 0
+  84              		@ link register save eliminated.
+  85              		.loc 1 39 0
+  86 0000 024A     		ldr	r2, .L8
+  87 0002 5368     		ldr	r3, [r2, #4]
+  88 0004 0133     		adds	r3, r3, #1
+  89 0006 5360     		str	r3, [r2, #4]
+  90 0008 7047     		bx	lr
+  91              	.L9:
+  92 000a 00BF     		.align	2
+  93              	.L8:
+  94 000c 00000000 		.word	.LANCHOR0
+  95              		.cfi_endproc
+  96              	.LFE66:
+  97              		.size	InterruptYL, .-InterruptYL
+  98              		.section	.text.InterruptYP,"ax",%progbits
+  99              		.align	2
+ 100              		.global	InterruptYP
+ 101              		.thumb
+ 102              		.thumb_func
+ 103              		.type	InterruptYP, %function
+ 104              	InterruptYP:
+ 105              	.LFB67:
+  40:main.c        **** 
+  41:main.c        **** CY_ISR(InterruptYP)
+  42:main.c        **** {countb--;}
+ 106              		.loc 1 42 0
+ 107              		.cfi_startproc
+ 108              		@ args = 0, pretend = 0, frame = 0
+ 109              		@ frame_needed = 0, uses_anonymous_args = 0
+ 110              		@ link register save eliminated.
+ 111              		.loc 1 42 0
+ 112 0000 024A     		ldr	r2, .L11
+ 113 0002 5368     		ldr	r3, [r2, #4]
+ 114 0004 013B     		subs	r3, r3, #1
+ 115 0006 5360     		str	r3, [r2, #4]
+ 116 0008 7047     		bx	lr
+ 117              	.L12:
+ 118 000a 00BF     		.align	2
+ 119              	.L11:
+ 120 000c 00000000 		.word	.LANCHOR0
+ 121              		.cfi_endproc
+ 122              	.LFE67:
+ 123              		.size	InterruptYP, .-InterruptYP
+ 124              		.section	.text.InterruptX,"ax",%progbits
+ 125              		.align	2
+ 126              		.global	InterruptX
+ 127              		.thumb
+ 128              		.thumb_func
+ 129              		.type	InterruptX, %function
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 4
+
+
+ 130              	InterruptX:
+ 131              	.LFB68:
+  43:main.c        **** CY_ISR(InterruptX)
+  44:main.c        **** {countb=0;
+ 132              		.loc 1 44 0
+ 133              		.cfi_startproc
+ 134              		@ args = 0, pretend = 0, frame = 0
+ 135              		@ frame_needed = 0, uses_anonymous_args = 0
+ 136              		@ link register save eliminated.
+ 137              		.loc 1 44 0
+ 138 0000 0022     		movs	r2, #0
+ 139 0002 014B     		ldr	r3, .L14
+ 140 0004 5A60     		str	r2, [r3, #4]
+ 141 0006 7047     		bx	lr
+ 142              	.L15:
+ 143              		.align	2
+ 144              	.L14:
+ 145 0008 00000000 		.word	.LANCHOR0
+ 146              		.cfi_endproc
+ 147              	.LFE68:
+ 148              		.size	InterruptX, .-InterruptX
+ 149              		.section	.text.InterruptY,"ax",%progbits
+ 150              		.align	2
+ 151              		.global	InterruptY
+ 152              		.thumb
+ 153              		.thumb_func
+ 154              		.type	InterruptY, %function
+ 155              	InterruptY:
+ 156              	.LFB69:
+  45:main.c        **** 
+  46:main.c        **** }
+  47:main.c        **** CY_ISR(InterruptY)
+  48:main.c        **** {counta=0;
+ 157              		.loc 1 48 0
+ 158              		.cfi_startproc
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161              		@ link register save eliminated.
+ 162              		.loc 1 48 0
+ 163 0000 0022     		movs	r2, #0
+ 164 0002 014B     		ldr	r3, .L17
+ 165 0004 1A60     		str	r2, [r3]
+ 166 0006 7047     		bx	lr
+ 167              	.L18:
+ 168              		.align	2
+ 169              	.L17:
+ 170 0008 00000000 		.word	.LANCHOR0
+ 171              		.cfi_endproc
+ 172              	.LFE69:
+ 173              		.size	InterruptY, .-InterruptY
+ 174              		.section	.text.InterruptRX,"ax",%progbits
+ 175              		.align	2
+ 176              		.global	InterruptRX
+ 177              		.thumb
+ 178              		.thumb_func
+ 179              		.type	InterruptRX, %function
+ 180              	InterruptRX:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 5
+
+
+ 181              	.LFB63:
+  28:main.c        **** i++;
+ 182              		.loc 1 28 0
+ 183              		.cfi_startproc
+ 184              		@ args = 0, pretend = 0, frame = 0
+ 185              		@ frame_needed = 0, uses_anonymous_args = 0
+ 186 0000 38B5     		push	{r3, r4, r5, lr}
+ 187              		.cfi_def_cfa_offset 16
+ 188              		.cfi_offset 3, -16
+ 189              		.cfi_offset 4, -12
+ 190              		.cfi_offset 5, -8
+ 191              		.cfi_offset 14, -4
+  28:main.c        **** i++;
+ 192              		.loc 1 28 0
+ 193 0002 074C     		ldr	r4, .L22
+ 194 0004 A568     		ldr	r5, [r4, #8]
+ 195 0006 FFF7FEFF 		bl	UART_GetChar
+ 196              	.LVL0:
+ 197 000a 064B     		ldr	r3, .L22+4
+ 198 000c 5855     		strb	r0, [r3, r5]
+  29:main.c        **** if(i>=10){i=0;x=0;}}
+ 199              		.loc 1 29 0
+ 200 000e A368     		ldr	r3, [r4, #8]
+ 201 0010 0133     		adds	r3, r3, #1
+ 202 0012 A360     		str	r3, [r4, #8]
+  30:main.c        **** 
+ 203              		.loc 1 30 0
+ 204 0014 092B     		cmp	r3, #9
+ 205 0016 02DD     		ble	.L19
+  30:main.c        **** 
+ 206              		.loc 1 30 0 is_stmt 0 discriminator 1
+ 207 0018 0022     		movs	r2, #0
+ 208 001a A260     		str	r2, [r4, #8]
+ 209 001c E260     		str	r2, [r4, #12]
+ 210              	.L19:
+ 211 001e 38BD     		pop	{r3, r4, r5, pc}
+ 212              	.L23:
+ 213              		.align	2
+ 214              	.L22:
+ 215 0020 00000000 		.word	.LANCHOR0
+ 216 0024 00000000 		.word	datorecibido
+ 217              		.cfi_endproc
+ 218              	.LFE63:
+ 219              		.size	InterruptRX, .-InterruptRX
+ 220              		.section	.text.UART_writeint,"ax",%progbits
+ 221              		.align	2
+ 222              		.global	UART_writeint
+ 223              		.thumb
+ 224              		.thumb_func
+ 225              		.type	UART_writeint, %function
+ 226              	UART_writeint:
+ 227              	.LFB70:
+  49:main.c        **** }
+  50:main.c        **** 
+  51:main.c        **** 
+  52:main.c        **** void UART_writeint(val)
+  53:main.c        **** {
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 6
+
+
+ 228              		.loc 1 53 0 is_stmt 1
+ 229              		.cfi_startproc
+ 230              		@ args = 0, pretend = 0, frame = 40
+ 231              		@ frame_needed = 0, uses_anonymous_args = 0
+ 232              	.LVL1:
+ 233 0000 00B5     		push	{lr}
+ 234              		.cfi_def_cfa_offset 4
+ 235              		.cfi_offset 14, -4
+ 236 0002 8BB0     		sub	sp, sp, #44
+ 237              		.cfi_def_cfa_offset 48
+  54:main.c        **** char buff[33];
+  55:main.c        **** 
+  56:main.c        **** itoa(val, buff,  10);
+ 238              		.loc 1 56 0
+ 239 0004 0A22     		movs	r2, #10
+ 240 0006 01A9     		add	r1, sp, #4
+ 241 0008 FFF7FEFF 		bl	itoa
+ 242              	.LVL2:
+  57:main.c        **** UART_PutString(buff);
+ 243              		.loc 1 57 0
+ 244 000c 01A8     		add	r0, sp, #4
+ 245 000e FFF7FEFF 		bl	UART_PutString
+ 246              	.LVL3:
+  58:main.c        **** }
+ 247              		.loc 1 58 0
+ 248 0012 0BB0     		add	sp, sp, #44
+ 249              		.cfi_def_cfa_offset 4
+ 250              		@ sp needed
+ 251 0014 5DF804FB 		ldr	pc, [sp], #4
+ 252              		.cfi_endproc
+ 253              	.LFE70:
+ 254              		.size	UART_writeint, .-UART_writeint
+ 255              		.global	__aeabi_i2d
+ 256              		.global	__aeabi_dsub
+ 257              		.global	__aeabi_dmul
+ 258              		.global	__aeabi_dadd
+ 259              		.global	__aeabi_d2iz
+ 260              		.section	.text.main,"ax",%progbits
+ 261              		.align	2
+ 262              		.global	main
+ 263              		.thumb
+ 264              		.thumb_func
+ 265              		.type	main, %function
+ 266              	main:
+ 267              	.LFB71:
+  59:main.c        **** 
+  60:main.c        **** 
+  61:main.c        **** int main(void)
+  62:main.c        **** {
+ 268              		.loc 1 62 0
+ 269              		.cfi_startproc
+ 270              		@ Volatile: function does not return.
+ 271              		@ args = 0, pretend = 0, frame = 0
+ 272              		@ frame_needed = 0, uses_anonymous_args = 0
+ 273 0000 2DE98848 		push	{r3, r7, fp, lr}
+ 274              		.cfi_def_cfa_offset 16
+ 275              		.cfi_offset 3, -16
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 7
+
+
+ 276              		.cfi_offset 7, -12
+ 277              		.cfi_offset 11, -8
+ 278              		.cfi_offset 14, -4
+  63:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 279              		.loc 1 63 0
+ 280              		.syntax unified
+ 281              	@ 63 "main.c" 1
+ 282 0004 62B6     		CPSIE   i
+ 283              	@ 0 "" 2
+  64:main.c        ****     UART_Start();
+ 284              		.loc 1 64 0
+ 285              		.thumb
+ 286              		.syntax unified
+ 287 0006 FFF7FEFF 		bl	UART_Start
+ 288              	.LVL4:
+  65:main.c        ****     PWM_Start();
+ 289              		.loc 1 65 0
+ 290 000a FFF7FEFF 		bl	PWM_Start
+ 291              	.LVL5:
+  66:main.c        ****     Clock_1_Start();
+ 292              		.loc 1 66 0
+ 293 000e FFF7FEFF 		bl	Clock_1_Start
+ 294              	.LVL6:
+  67:main.c        ****     isrRx_StartEx(InterruptRX);
+ 295              		.loc 1 67 0
+ 296 0012 BB48     		ldr	r0, .L56+48
+ 297 0014 FFF7FEFF 		bl	isrRx_StartEx
+ 298              	.LVL7:
+  68:main.c        ****     isrXP_StartEx(InterruptXP);
+ 299              		.loc 1 68 0
+ 300 0018 BA48     		ldr	r0, .L56+52
+ 301 001a FFF7FEFF 		bl	isrXP_StartEx
+ 302              	.LVL8:
+  69:main.c        ****     isrXL_StartEx(InterruptXL);
+ 303              		.loc 1 69 0
+ 304 001e BA48     		ldr	r0, .L56+56
+ 305 0020 FFF7FEFF 		bl	isrXL_StartEx
+ 306              	.LVL9:
+  70:main.c        ****     isrYP_StartEx(InterruptYP);
+ 307              		.loc 1 70 0
+ 308 0024 B948     		ldr	r0, .L56+60
+ 309 0026 FFF7FEFF 		bl	isrYP_StartEx
+ 310              	.LVL10:
+  71:main.c        ****     isrYL_StartEx(InterruptYL);
+ 311              		.loc 1 71 0
+ 312 002a B948     		ldr	r0, .L56+64
+ 313 002c FFF7FEFF 		bl	isrYL_StartEx
+ 314              	.LVL11:
+  72:main.c        ****     isrX_StartEx(InterruptX);
+ 315              		.loc 1 72 0
+ 316 0030 B848     		ldr	r0, .L56+68
+ 317 0032 FFF7FEFF 		bl	isrX_StartEx
+ 318              	.LVL12:
+  73:main.c        ****     isrY_StartEx(InterruptY);
+ 319              		.loc 1 73 0
+ 320 0036 B848     		ldr	r0, .L56+72
+ 321 0038 FFF7FEFF 		bl	isrY_StartEx
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 8
+
+
+ 322              	.LVL13:
+ 323              	.L54:
+  74:main.c        ****    
+  75:main.c        ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  76:main.c        **** 
+  77:main.c        ****     for(;;)
+  78:main.c        ****     {
+  79:main.c        ****      if(datorecibido[i]=='x'){i=0;x=1;}
+ 324              		.loc 1 79 0
+ 325 003c B74B     		ldr	r3, .L56+76
+ 326 003e 9B68     		ldr	r3, [r3, #8]
+ 327 0040 B74A     		ldr	r2, .L56+80
+ 328 0042 D35C     		ldrb	r3, [r2, r3]	@ zero_extendqisi2
+ 329 0044 782B     		cmp	r3, #120
+ 330 0046 04D1     		bne	.L27
+ 331              		.loc 1 79 0 is_stmt 0 discriminator 1
+ 332 0048 B44B     		ldr	r3, .L56+76
+ 333 004a 0022     		movs	r2, #0
+ 334 004c 9A60     		str	r2, [r3, #8]
+ 335 004e 0122     		movs	r2, #1
+ 336 0050 DA60     		str	r2, [r3, #12]
+ 337              	.L27:
+  80:main.c        ****         MX[0]=datorecibido[2];
+ 338              		.loc 1 80 0 is_stmt 1
+ 339 0052 B34C     		ldr	r4, .L56+80
+ 340 0054 A378     		ldrb	r3, [r4, #2]	@ zero_extendqisi2
+ 341 0056 B348     		ldr	r0, .L56+84
+ 342 0058 0370     		strb	r3, [r0]
+  81:main.c        ****         MX[1]=datorecibido[3];
+ 343              		.loc 1 81 0
+ 344 005a E378     		ldrb	r3, [r4, #3]	@ zero_extendqisi2
+ 345 005c 4370     		strb	r3, [r0, #1]
+  82:main.c        ****         MX[2]=datorecibido[4];
+ 346              		.loc 1 82 0
+ 347 005e 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 348 0060 8370     		strb	r3, [r0, #2]
+  83:main.c        ****         MXV0=atoi(MX);
+ 349              		.loc 1 83 0
+ 350 0062 FFF7FEFF 		bl	atoi
+ 351              	.LVL14:
+ 352 0066 AD4B     		ldr	r3, .L56+76
+ 353 0068 1861     		str	r0, [r3, #16]
+  84:main.c        **** 
+  85:main.c        ****         if(datorecibido[1]=='-')
+ 354              		.loc 1 85 0
+ 355 006a 6378     		ldrb	r3, [r4, #1]	@ zero_extendqisi2
+ 356 006c 2D2B     		cmp	r3, #45
+ 357 006e 02D1     		bne	.L28
+  86:main.c        ****         {MXV0=0-MXV0;}
+ 358              		.loc 1 86 0
+ 359 0070 4042     		negs	r0, r0
+ 360 0072 AA4B     		ldr	r3, .L56+76
+ 361 0074 1861     		str	r0, [r3, #16]
+ 362              	.L28:
+  87:main.c        ****         else{MXV0=MXV0;}
+  88:main.c        ****         
+  89:main.c        ****         MY[0]=datorecibido[7];
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 9
+
+
+ 363              		.loc 1 89 0
+ 364 0076 AA4C     		ldr	r4, .L56+80
+ 365 0078 E379     		ldrb	r3, [r4, #7]	@ zero_extendqisi2
+ 366 007a AB48     		ldr	r0, .L56+88
+ 367 007c 0370     		strb	r3, [r0]
+  90:main.c        ****         MY[1]=datorecibido[8];
+ 368              		.loc 1 90 0
+ 369 007e 237A     		ldrb	r3, [r4, #8]	@ zero_extendqisi2
+ 370 0080 4370     		strb	r3, [r0, #1]
+  91:main.c        ****         MY[2]=datorecibido[9];
+ 371              		.loc 1 91 0
+ 372 0082 637A     		ldrb	r3, [r4, #9]	@ zero_extendqisi2
+ 373 0084 8370     		strb	r3, [r0, #2]
+  92:main.c        ****         MYV0=atoi(MY);
+ 374              		.loc 1 92 0
+ 375 0086 FFF7FEFF 		bl	atoi
+ 376              	.LVL15:
+ 377 008a A44B     		ldr	r3, .L56+76
+ 378 008c 5861     		str	r0, [r3, #20]
+  93:main.c        ****        
+  94:main.c        ****         if(datorecibido[6]=='-')
+ 379              		.loc 1 94 0
+ 380 008e A379     		ldrb	r3, [r4, #6]	@ zero_extendqisi2
+ 381 0090 2D2B     		cmp	r3, #45
+ 382 0092 02D1     		bne	.L29
+  95:main.c        ****         {MYV0=0-MYV0;}
+ 383              		.loc 1 95 0
+ 384 0094 4042     		negs	r0, r0
+ 385 0096 A14B     		ldr	r3, .L56+76
+ 386 0098 5861     		str	r0, [r3, #20]
+ 387              	.L29:
+  96:main.c        ****         else{MYV0=MYV0;}
+  97:main.c        ****        
+  98:main.c        ****         //////////////////////////////////////////////////////////////////////////////
+  99:main.c        ****         /*Control Motor X*/
+ 100:main.c        ****         /////////////////////////////////////////////////////////////////////////////
+ 101:main.c        ****         
+ 102:main.c        ****         refex=MXV0;
+ 388              		.loc 1 102 0
+ 389 009a DFF880A2 		ldr	r10, .L56+76
+ 390 009e DAF81000 		ldr	r0, [r10, #16]
+ 391 00a2 FFF7FEFF 		bl	__aeabi_i2d
+ 392              	.LVL16:
+ 393 00a6 0646     		mov	r6, r0
+ 394 00a8 0F46     		mov	r7, r1
+ 395 00aa CAE90667 		strd	r6, [r10, #24]
+ 103:main.c        ****         sex=counta;
+ 396              		.loc 1 103 0
+ 397 00ae DAF800B0 		ldr	fp, [r10]
+ 398 00b2 5846     		mov	r0, fp
+ 399 00b4 FFF7FEFF 		bl	__aeabi_i2d
+ 400              	.LVL17:
+ 401 00b8 0446     		mov	r4, r0
+ 402 00ba 0D46     		mov	r5, r1
+ 403 00bc CAE90845 		strd	r4, [r10, #32]
+ 104:main.c        ****         
+ 105:main.c        ****         //       1.8416   -2.1619    0.4164
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 10
+
+
+ 106:main.c        **** 
+ 107:main.c        ****         retex=refex-sex;
+ 404              		.loc 1 107 0
+ 405 00c0 0246     		mov	r2, r0
+ 406 00c2 0B46     		mov	r3, r1
+ 407 00c4 3046     		mov	r0, r6
+ 408 00c6 3946     		mov	r1, r7
+ 409 00c8 FFF7FEFF 		bl	__aeabi_dsub
+ 410              	.LVL18:
+ 411 00cc 8046     		mov	r8, r0
+ 412 00ce 8946     		mov	r9, r1
+ 413 00d0 CAE90A89 		strd	r8, [r10, #40]
+ 108:main.c        ****         retsx = retsax+1.8416*retex-2.1619*reteax+0.4164*reteaax;
+ 414              		.loc 1 108 0
+ 415 00d4 7EA3     		adr	r3, .L56
+ 416 00d6 D3E90023 		ldrd	r2, [r3]
+ 417 00da FFF7FEFF 		bl	__aeabi_dmul
+ 418              	.LVL19:
+ 419 00de DAE90C23 		ldrd	r2, [r10, #48]
+ 420 00e2 FFF7FEFF 		bl	__aeabi_dadd
+ 421              	.LVL20:
+ 422 00e6 0646     		mov	r6, r0
+ 423 00e8 0F46     		mov	r7, r1
+ 424 00ea 7BA3     		adr	r3, .L56+8
+ 425 00ec D3E90023 		ldrd	r2, [r3]
+ 426 00f0 DAE90E01 		ldrd	r0, [r10, #56]
+ 427 00f4 FFF7FEFF 		bl	__aeabi_dmul
+ 428              	.LVL21:
+ 429 00f8 0246     		mov	r2, r0
+ 430 00fa 0B46     		mov	r3, r1
+ 431 00fc 3046     		mov	r0, r6
+ 432 00fe 3946     		mov	r1, r7
+ 433 0100 FFF7FEFF 		bl	__aeabi_dsub
+ 434              	.LVL22:
+ 435 0104 0646     		mov	r6, r0
+ 436 0106 0F46     		mov	r7, r1
+ 437 0108 75A3     		adr	r3, .L56+16
+ 438 010a D3E90023 		ldrd	r2, [r3]
+ 439 010e DAE91001 		ldrd	r0, [r10, #64]
+ 440 0112 FFF7FEFF 		bl	__aeabi_dmul
+ 441              	.LVL23:
+ 442 0116 0246     		mov	r2, r0
+ 443 0118 0B46     		mov	r3, r1
+ 444 011a 3046     		mov	r0, r6
+ 445 011c 3946     		mov	r1, r7
+ 446 011e FFF7FEFF 		bl	__aeabi_dadd
+ 447              	.LVL24:
+ 448 0122 0646     		mov	r6, r0
+ 449 0124 0F46     		mov	r7, r1
+ 450 0126 CAE91267 		strd	r6, [r10, #72]
+ 109:main.c        ****         MXV=retsx;
+ 451              		.loc 1 109 0
+ 452 012a FFF7FEFF 		bl	__aeabi_d2iz
+ 453              	.LVL25:
+ 454 012e CAF85000 		str	r0, [r10, #80]
+ 110:main.c        ****         
+ 111:main.c        ****         
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 11
+
+
+ 112:main.c        ****         seax=sex;
+ 455              		.loc 1 112 0
+ 456 0132 CAE91645 		strd	r4, [r10, #88]
+ 113:main.c        ****         seaax=seax;
+ 457              		.loc 1 113 0
+ 458 0136 CAE91845 		strd	r4, [r10, #96]
+ 114:main.c        ****         reteax=retex;
+ 459              		.loc 1 114 0
+ 460 013a CAE90E89 		strd	r8, [r10, #56]
+ 115:main.c        ****         reteaax=reteax;
+ 461              		.loc 1 115 0
+ 462 013e CAE91089 		strd	r8, [r10, #64]
+ 116:main.c        ****         retsax=retsx;
+ 463              		.loc 1 116 0
+ 464 0142 CAE90C67 		strd	r6, [r10, #48]
+ 117:main.c        ****         retsaax=retsax;
+ 465              		.loc 1 117 0
+ 466 0146 CAE91A67 		strd	r6, [r10, #104]
+ 118:main.c        ****         
+ 119:main.c        ****         
+ 120:main.c        ****         //////////////////////////////////////////////////////////////////////////////
+ 121:main.c        ****         /*Control Motor Y*/
+ 122:main.c        ****         /////////////////////////////////////////////////////////////////////////////
+ 123:main.c        ****         
+ 124:main.c        ****         refey=MYV0;
+ 467              		.loc 1 124 0
+ 468 014a DAF81400 		ldr	r0, [r10, #20]
+ 469 014e FFF7FEFF 		bl	__aeabi_i2d
+ 470              	.LVL26:
+ 471 0152 0646     		mov	r6, r0
+ 472 0154 0F46     		mov	r7, r1
+ 473 0156 CAE91C67 		strd	r6, [r10, #112]
+ 125:main.c        ****         sey=countb;
+ 474              		.loc 1 125 0
+ 475 015a DAF80400 		ldr	r0, [r10, #4]
+ 476 015e FFF7FEFF 		bl	__aeabi_i2d
+ 477              	.LVL27:
+ 478 0162 0446     		mov	r4, r0
+ 479 0164 0D46     		mov	r5, r1
+ 480 0166 CAE91E45 		strd	r4, [r10, #120]
+ 126:main.c        ****         
+ 127:main.c        ****         //       2.2099   -2.5943    0.4996
+ 128:main.c        ****         retey=refey-sey;
+ 481              		.loc 1 128 0
+ 482 016a 0246     		mov	r2, r0
+ 483 016c 0B46     		mov	r3, r1
+ 484 016e 3046     		mov	r0, r6
+ 485 0170 3946     		mov	r1, r7
+ 486 0172 FFF7FEFF 		bl	__aeabi_dsub
+ 487              	.LVL28:
+ 488 0176 0646     		mov	r6, r0
+ 489 0178 0F46     		mov	r7, r1
+ 490 017a CAE92067 		strd	r6, [r10, #128]
+ 129:main.c        ****         retsy = retsay+1.2099*retey-1.5943*reteay+0.4996*reteaay;
+ 491              		.loc 1 129 0
+ 492 017e 5AA3     		adr	r3, .L56+24
+ 493 0180 D3E90023 		ldrd	r2, [r3]
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 12
+
+
+ 494 0184 FFF7FEFF 		bl	__aeabi_dmul
+ 495              	.LVL29:
+ 496 0188 DAE92223 		ldrd	r2, [r10, #136]
+ 497 018c FFF7FEFF 		bl	__aeabi_dadd
+ 498              	.LVL30:
+ 499 0190 8046     		mov	r8, r0
+ 500 0192 8946     		mov	r9, r1
+ 501 0194 56A3     		adr	r3, .L56+32
+ 502 0196 D3E90023 		ldrd	r2, [r3]
+ 503 019a DAE92401 		ldrd	r0, [r10, #144]
+ 504 019e FFF7FEFF 		bl	__aeabi_dmul
+ 505              	.LVL31:
+ 506 01a2 0246     		mov	r2, r0
+ 507 01a4 0B46     		mov	r3, r1
+ 508 01a6 4046     		mov	r0, r8
+ 509 01a8 4946     		mov	r1, r9
+ 510 01aa FFF7FEFF 		bl	__aeabi_dsub
+ 511              	.LVL32:
+ 512 01ae 8046     		mov	r8, r0
+ 513 01b0 8946     		mov	r9, r1
+ 514 01b2 51A3     		adr	r3, .L56+40
+ 515 01b4 D3E90023 		ldrd	r2, [r3]
+ 516 01b8 DAE92601 		ldrd	r0, [r10, #152]
+ 517 01bc FFF7FEFF 		bl	__aeabi_dmul
+ 518              	.LVL33:
+ 519 01c0 0246     		mov	r2, r0
+ 520 01c2 0B46     		mov	r3, r1
+ 521 01c4 4046     		mov	r0, r8
+ 522 01c6 4946     		mov	r1, r9
+ 523 01c8 FFF7FEFF 		bl	__aeabi_dadd
+ 524              	.LVL34:
+ 525 01cc 8046     		mov	r8, r0
+ 526 01ce 8946     		mov	r9, r1
+ 527 01d0 CAE92889 		strd	r8, [r10, #160]
+ 130:main.c        ****         MYV=retsy;
+ 528              		.loc 1 130 0
+ 529 01d4 FFF7FEFF 		bl	__aeabi_d2iz
+ 530              	.LVL35:
+ 531 01d8 CAF8A800 		str	r0, [r10, #168]
+ 131:main.c        ****         seay=sey;
+ 532              		.loc 1 131 0
+ 533 01dc CAE92C45 		strd	r4, [r10, #176]
+ 132:main.c        ****         seaay=seay;
+ 534              		.loc 1 132 0
+ 535 01e0 CAE92E45 		strd	r4, [r10, #184]
+ 133:main.c        ****         reteay=retey;
+ 536              		.loc 1 133 0
+ 537 01e4 CAE92467 		strd	r6, [r10, #144]
+ 134:main.c        ****         reteaay=reteay;
+ 538              		.loc 1 134 0
+ 539 01e8 CAE92667 		strd	r6, [r10, #152]
+ 135:main.c        ****         retsay=retsy;
+ 540              		.loc 1 135 0
+ 541 01ec CAE92289 		strd	r8, [r10, #136]
+ 136:main.c        ****         retsaay=retsay;
+ 542              		.loc 1 136 0
+ 543 01f0 CAE93089 		strd	r8, [r10, #192]
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 13
+
+
+ 137:main.c        ****         
+ 138:main.c        ****     
+ 139:main.c        ****     
+ 140:main.c        ****      
+ 141:main.c        ****         
+ 142:main.c        ****   /*  if(MXV<=-255){MXV=-255;}
+ 143:main.c        ****     if(MYV<=-255){MYV=-255;}
+ 144:main.c        ****     if(MXV>=255){MXV=255;}
+ 145:main.c        ****     if(MYV>=255){MYV=255;}*/
+ 146:main.c        **** 
+ 147:main.c        ****  
+ 148:main.c        ****     
+ 149:main.c        ****     if(counta>0 && counta<=9){UART_PutChar('0');UART_PutChar('0');}
+ 544              		.loc 1 149 0
+ 545 01f4 0BF1FF3B 		add	fp, fp, #-1
+ 546 01f8 BBF1080F 		cmp	fp, #8
+ 547 01fc 05D8     		bhi	.L30
+ 548              		.loc 1 149 0 is_stmt 0 discriminator 1
+ 549 01fe 3020     		movs	r0, #48
+ 550 0200 FFF7FEFF 		bl	UART_PutChar
+ 551              	.LVL36:
+ 552 0204 3020     		movs	r0, #48
+ 553 0206 FFF7FEFF 		bl	UART_PutChar
+ 554              	.LVL37:
+ 555              	.L30:
+ 150:main.c        ****  if(counta>=10 && counta<=99){UART_PutChar('0');}
+ 556              		.loc 1 150 0 is_stmt 1
+ 557 020a 444B     		ldr	r3, .L56+76
+ 558 020c 1B68     		ldr	r3, [r3]
+ 559 020e 0A3B     		subs	r3, r3, #10
+ 560 0210 592B     		cmp	r3, #89
+ 561 0212 02D8     		bhi	.L31
+ 562              		.loc 1 150 0 is_stmt 0 discriminator 1
+ 563 0214 3020     		movs	r0, #48
+ 564 0216 FFF7FEFF 		bl	UART_PutChar
+ 565              	.LVL38:
+ 566              	.L31:
+ 151:main.c        **** if(counta>=-9 && counta<0){UART_PutChar('0');UART_PutChar('0');}
+ 567              		.loc 1 151 0 is_stmt 1
+ 568 021a 404B     		ldr	r3, .L56+76
+ 569 021c 1B68     		ldr	r3, [r3]
+ 570 021e 0933     		adds	r3, r3, #9
+ 571 0220 082B     		cmp	r3, #8
+ 572 0222 05D8     		bhi	.L32
+ 573              		.loc 1 151 0 is_stmt 0 discriminator 1
+ 574 0224 3020     		movs	r0, #48
+ 575 0226 FFF7FEFF 		bl	UART_PutChar
+ 576              	.LVL39:
+ 577 022a 3020     		movs	r0, #48
+ 578 022c FFF7FEFF 		bl	UART_PutChar
+ 579              	.LVL40:
+ 580              	.L32:
+ 152:main.c        ****  if(counta>=-99 && counta<=-10){UART_PutChar('0');}
+ 581              		.loc 1 152 0 is_stmt 1
+ 582 0230 3A4B     		ldr	r3, .L56+76
+ 583 0232 1B68     		ldr	r3, [r3]
+ 584 0234 6333     		adds	r3, r3, #99
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 14
+
+
+ 585 0236 592B     		cmp	r3, #89
+ 586 0238 02D8     		bhi	.L33
+ 587              		.loc 1 152 0 is_stmt 0 discriminator 1
+ 588 023a 3020     		movs	r0, #48
+ 589 023c FFF7FEFF 		bl	UART_PutChar
+ 590              	.LVL41:
+ 591              	.L33:
+ 153:main.c        ****    if(counta==0){UART_PutChar('0');UART_PutChar('0');UART_PutChar('0');} else{UART_writeint(counta)
+ 592              		.loc 1 153 0 is_stmt 1
+ 593 0240 364B     		ldr	r3, .L56+76
+ 594 0242 1868     		ldr	r0, [r3]
+ 595 0244 48B9     		cbnz	r0, .L34
+ 596              		.loc 1 153 0 is_stmt 0 discriminator 1
+ 597 0246 3020     		movs	r0, #48
+ 598 0248 FFF7FEFF 		bl	UART_PutChar
+ 599              	.LVL42:
+ 600 024c 3020     		movs	r0, #48
+ 601 024e FFF7FEFF 		bl	UART_PutChar
+ 602              	.LVL43:
+ 603 0252 3020     		movs	r0, #48
+ 604 0254 FFF7FEFF 		bl	UART_PutChar
+ 605              	.LVL44:
+ 606 0258 01E0     		b	.L35
+ 607              	.L34:
+ 608              		.loc 1 153 0 discriminator 2
+ 609 025a FFF7FEFF 		bl	UART_writeint
+ 610              	.LVL45:
+ 611              	.L35:
+ 154:main.c        ****     
+ 155:main.c        ****     UART_PutChar(',');  
+ 612              		.loc 1 155 0 is_stmt 1
+ 613 025e 2C20     		movs	r0, #44
+ 614 0260 FFF7FEFF 		bl	UART_PutChar
+ 615              	.LVL46:
+ 156:main.c        **** 
+ 157:main.c        ****        if(countb>0 && countb<=9){UART_PutChar('0');UART_PutChar('0');}
+ 616              		.loc 1 157 0
+ 617 0264 2D4B     		ldr	r3, .L56+76
+ 618 0266 5B68     		ldr	r3, [r3, #4]
+ 619 0268 013B     		subs	r3, r3, #1
+ 620 026a 082B     		cmp	r3, #8
+ 621 026c 05D8     		bhi	.L36
+ 622              		.loc 1 157 0 is_stmt 0 discriminator 1
+ 623 026e 3020     		movs	r0, #48
+ 624 0270 FFF7FEFF 		bl	UART_PutChar
+ 625              	.LVL47:
+ 626 0274 3020     		movs	r0, #48
+ 627 0276 FFF7FEFF 		bl	UART_PutChar
+ 628              	.LVL48:
+ 629              	.L36:
+ 158:main.c        ****  if(countb>=10 && countb<=99){UART_PutChar('0');}
+ 630              		.loc 1 158 0 is_stmt 1
+ 631 027a 284B     		ldr	r3, .L56+76
+ 632 027c 5B68     		ldr	r3, [r3, #4]
+ 633 027e 0A3B     		subs	r3, r3, #10
+ 634 0280 592B     		cmp	r3, #89
+ 635 0282 02D8     		bhi	.L37
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 15
+
+
+ 636              		.loc 1 158 0 is_stmt 0 discriminator 1
+ 637 0284 3020     		movs	r0, #48
+ 638 0286 FFF7FEFF 		bl	UART_PutChar
+ 639              	.LVL49:
+ 640              	.L37:
+ 159:main.c        **** if(countb>=-9 && countb<0){UART_PutChar('0');UART_PutChar('0');}
+ 641              		.loc 1 159 0 is_stmt 1
+ 642 028a 244B     		ldr	r3, .L56+76
+ 643 028c 5B68     		ldr	r3, [r3, #4]
+ 644 028e 0933     		adds	r3, r3, #9
+ 645 0290 082B     		cmp	r3, #8
+ 646 0292 05D8     		bhi	.L38
+ 647              		.loc 1 159 0 is_stmt 0 discriminator 1
+ 648 0294 3020     		movs	r0, #48
+ 649 0296 FFF7FEFF 		bl	UART_PutChar
+ 650              	.LVL50:
+ 651 029a 3020     		movs	r0, #48
+ 652 029c FFF7FEFF 		bl	UART_PutChar
+ 653              	.LVL51:
+ 654              	.L38:
+ 160:main.c        ****  if(countb>=-99 && countb<=-10){UART_PutChar('0');}
+ 655              		.loc 1 160 0 is_stmt 1
+ 656 02a0 1E4B     		ldr	r3, .L56+76
+ 657 02a2 5B68     		ldr	r3, [r3, #4]
+ 658 02a4 6333     		adds	r3, r3, #99
+ 659 02a6 592B     		cmp	r3, #89
+ 660 02a8 02D8     		bhi	.L39
+ 661              		.loc 1 160 0 is_stmt 0 discriminator 1
+ 662 02aa 3020     		movs	r0, #48
+ 663 02ac FFF7FEFF 		bl	UART_PutChar
+ 664              	.LVL52:
+ 665              	.L39:
+ 161:main.c        ****    if(countb==0){UART_PutChar('0');UART_PutChar('0');UART_PutChar('0');} else{UART_writeint(countb)
+ 666              		.loc 1 161 0 is_stmt 1
+ 667 02b0 1A4B     		ldr	r3, .L56+76
+ 668 02b2 5868     		ldr	r0, [r3, #4]
+ 669 02b4 D0BB     		cbnz	r0, .L40
+ 670              		.loc 1 161 0 is_stmt 0 discriminator 1
+ 671 02b6 3020     		movs	r0, #48
+ 672 02b8 FFF7FEFF 		bl	UART_PutChar
+ 673              	.LVL53:
+ 674 02bc 3020     		movs	r0, #48
+ 675 02be FFF7FEFF 		bl	UART_PutChar
+ 676              	.LVL54:
+ 677 02c2 3020     		movs	r0, #48
+ 678 02c4 FFF7FEFF 		bl	UART_PutChar
+ 679              	.LVL55:
+ 680 02c8 32E0     		b	.L41
+ 681              	.L57:
+ 682 02ca 00BFAFF3 		.align	3
+ 682      0080
+ 683              	.L56:
+ 684 02d0 8104C58F 		.word	-1882913663
+ 685 02d4 3177FD3F 		.word	1073575729
+ 686 02d8 7AC7293A 		.word	975816570
+ 687 02dc 924B0140 		.word	1073826706
+ 688 02e0 4A7B832F 		.word	797145930
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 16
+
+
+ 689 02e4 4CA6DA3F 		.word	1071294028
+ 690 02e8 EBE2361A 		.word	439804651
+ 691 02ec C05BF33F 		.word	1072913344
+ 692 02f0 6E3480B7 		.word	-1216334738
+ 693 02f4 4082F93F 		.word	1073316416
+ 694 02f8 EF384547 		.word	1195718895
+ 695 02fc 72F9DF3F 		.word	1071642994
+ 696 0300 00000000 		.word	InterruptRX
+ 697 0304 00000000 		.word	InterruptXP
+ 698 0308 00000000 		.word	InterruptXL
+ 699 030c 00000000 		.word	InterruptYP
+ 700 0310 00000000 		.word	InterruptYL
+ 701 0314 00000000 		.word	InterruptX
+ 702 0318 00000000 		.word	InterruptY
+ 703 031c 00000000 		.word	.LANCHOR0
+ 704 0320 00000000 		.word	datorecibido
+ 705 0324 00000000 		.word	MX
+ 706 0328 00000000 		.word	MY
+ 707              	.L40:
+ 708              		.loc 1 161 0 discriminator 2
+ 709 032c FFF7FEFF 		bl	UART_writeint
+ 710              	.LVL56:
+ 711              	.L41:
+ 162:main.c        ****     
+ 163:main.c        ****     
+ 164:main.c        ****     UART_PutChar(','); 
+ 712              		.loc 1 164 0 is_stmt 1
+ 713 0330 2C20     		movs	r0, #44
+ 714 0332 FFF7FEFF 		bl	UART_PutChar
+ 715              	.LVL57:
+ 165:main.c        ****  if(MXV>0 && MXV<=9){UART_PutChar('0');UART_PutChar('0');}
+ 716              		.loc 1 165 0
+ 717 0336 4B4B     		ldr	r3, .L58
+ 718 0338 1B6D     		ldr	r3, [r3, #80]
+ 719 033a 013B     		subs	r3, r3, #1
+ 720 033c 082B     		cmp	r3, #8
+ 721 033e 05D8     		bhi	.L42
+ 722              		.loc 1 165 0 is_stmt 0 discriminator 1
+ 723 0340 3020     		movs	r0, #48
+ 724 0342 FFF7FEFF 		bl	UART_PutChar
+ 725              	.LVL58:
+ 726 0346 3020     		movs	r0, #48
+ 727 0348 FFF7FEFF 		bl	UART_PutChar
+ 728              	.LVL59:
+ 729              	.L42:
+ 166:main.c        ****  if(MXV>=10 && MXV<=99){UART_PutChar('0');}
+ 730              		.loc 1 166 0 is_stmt 1
+ 731 034c 454B     		ldr	r3, .L58
+ 732 034e 1B6D     		ldr	r3, [r3, #80]
+ 733 0350 0A3B     		subs	r3, r3, #10
+ 734 0352 592B     		cmp	r3, #89
+ 735 0354 02D8     		bhi	.L43
+ 736              		.loc 1 166 0 is_stmt 0 discriminator 1
+ 737 0356 3020     		movs	r0, #48
+ 738 0358 FFF7FEFF 		bl	UART_PutChar
+ 739              	.LVL60:
+ 740              	.L43:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 17
+
+
+ 167:main.c        ****    if(MXV==0){UART_PutChar('0');UART_PutChar('0');UART_PutChar('0');} else{UART_writeint(MXV);}
+ 741              		.loc 1 167 0 is_stmt 1
+ 742 035c 414B     		ldr	r3, .L58
+ 743 035e 186D     		ldr	r0, [r3, #80]
+ 744 0360 48B9     		cbnz	r0, .L44
+ 745              		.loc 1 167 0 is_stmt 0 discriminator 1
+ 746 0362 3020     		movs	r0, #48
+ 747 0364 FFF7FEFF 		bl	UART_PutChar
+ 748              	.LVL61:
+ 749 0368 3020     		movs	r0, #48
+ 750 036a FFF7FEFF 		bl	UART_PutChar
+ 751              	.LVL62:
+ 752 036e 3020     		movs	r0, #48
+ 753 0370 FFF7FEFF 		bl	UART_PutChar
+ 754              	.LVL63:
+ 755 0374 01E0     		b	.L45
+ 756              	.L44:
+ 757              		.loc 1 167 0 discriminator 2
+ 758 0376 FFF7FEFF 		bl	UART_writeint
+ 759              	.LVL64:
+ 760              	.L45:
+ 168:main.c        ****     UART_PutChar(','); 
+ 761              		.loc 1 168 0 is_stmt 1
+ 762 037a 2C20     		movs	r0, #44
+ 763 037c FFF7FEFF 		bl	UART_PutChar
+ 764              	.LVL65:
+ 169:main.c        **** if(MYV>0 && MYV<=9){UART_PutChar('0');UART_PutChar('0');}
+ 765              		.loc 1 169 0
+ 766 0380 384B     		ldr	r3, .L58
+ 767 0382 D3F8A830 		ldr	r3, [r3, #168]
+ 768 0386 013B     		subs	r3, r3, #1
+ 769 0388 082B     		cmp	r3, #8
+ 770 038a 05D8     		bhi	.L46
+ 771              		.loc 1 169 0 is_stmt 0 discriminator 1
+ 772 038c 3020     		movs	r0, #48
+ 773 038e FFF7FEFF 		bl	UART_PutChar
+ 774              	.LVL66:
+ 775 0392 3020     		movs	r0, #48
+ 776 0394 FFF7FEFF 		bl	UART_PutChar
+ 777              	.LVL67:
+ 778              	.L46:
+ 170:main.c        ****  if(MYV>=10 && MYV<=99){UART_PutChar('0');}
+ 779              		.loc 1 170 0 is_stmt 1
+ 780 0398 324B     		ldr	r3, .L58
+ 781 039a D3F8A830 		ldr	r3, [r3, #168]
+ 782 039e 0A3B     		subs	r3, r3, #10
+ 783 03a0 592B     		cmp	r3, #89
+ 784 03a2 02D8     		bhi	.L47
+ 785              		.loc 1 170 0 is_stmt 0 discriminator 1
+ 786 03a4 3020     		movs	r0, #48
+ 787 03a6 FFF7FEFF 		bl	UART_PutChar
+ 788              	.LVL68:
+ 789              	.L47:
+ 171:main.c        ****    if(MYV==0){UART_PutChar('0');UART_PutChar('0');UART_PutChar('0');} else{UART_writeint(MYV);}
+ 790              		.loc 1 171 0 is_stmt 1
+ 791 03aa 2E4B     		ldr	r3, .L58
+ 792 03ac D3F8A800 		ldr	r0, [r3, #168]
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 18
+
+
+ 793 03b0 48B9     		cbnz	r0, .L48
+ 794              		.loc 1 171 0 is_stmt 0 discriminator 1
+ 795 03b2 3020     		movs	r0, #48
+ 796 03b4 FFF7FEFF 		bl	UART_PutChar
+ 797              	.LVL69:
+ 798 03b8 3020     		movs	r0, #48
+ 799 03ba FFF7FEFF 		bl	UART_PutChar
+ 800              	.LVL70:
+ 801 03be 3020     		movs	r0, #48
+ 802 03c0 FFF7FEFF 		bl	UART_PutChar
+ 803              	.LVL71:
+ 804 03c4 01E0     		b	.L49
+ 805              	.L48:
+ 806              		.loc 1 171 0 discriminator 2
+ 807 03c6 FFF7FEFF 		bl	UART_writeint
+ 808              	.LVL72:
+ 809              	.L49:
+ 172:main.c        ****   UART_PutChar(';');
+ 810              		.loc 1 172 0 is_stmt 1
+ 811 03ca 3B20     		movs	r0, #59
+ 812 03cc FFF7FEFF 		bl	UART_PutChar
+ 813              	.LVL73:
+ 173:main.c        **** 
+ 174:main.c        ****     UART_PutChar('\n');
+ 814              		.loc 1 174 0
+ 815 03d0 0A20     		movs	r0, #10
+ 816 03d2 FFF7FEFF 		bl	UART_PutChar
+ 817              	.LVL74:
+ 175:main.c        ****     UART_PutChar(0x0D);
+ 818              		.loc 1 175 0
+ 819 03d6 0D20     		movs	r0, #13
+ 820 03d8 FFF7FEFF 		bl	UART_PutChar
+ 821              	.LVL75:
+ 176:main.c        ****     
+ 177:main.c        ****     
+ 178:main.c        ****     
+ 179:main.c        ****     
+ 180:main.c        ****     
+ 181:main.c        ****     PWM_WriteCompare1(abs(MXV)); 
+ 822              		.loc 1 181 0
+ 823 03dc 214C     		ldr	r4, .L58
+ 824 03de 206D     		ldr	r0, [r4, #80]
+ 825 03e0 0028     		cmp	r0, #0
+ 826 03e2 B8BF     		it	lt
+ 827 03e4 4042     		rsblt	r0, r0, #0
+ 828 03e6 C0B2     		uxtb	r0, r0
+ 829 03e8 FFF7FEFF 		bl	PWM_WriteCompare1
+ 830              	.LVL76:
+ 182:main.c        ****     PWM_WriteCompare2(abs(MYV)); 
+ 831              		.loc 1 182 0
+ 832 03ec D4F8A800 		ldr	r0, [r4, #168]
+ 833 03f0 0028     		cmp	r0, #0
+ 834 03f2 B8BF     		it	lt
+ 835 03f4 4042     		rsblt	r0, r0, #0
+ 836 03f6 C0B2     		uxtb	r0, r0
+ 837 03f8 FFF7FEFF 		bl	PWM_WriteCompare2
+ 838              	.LVL77:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 19
+
+
+ 183:main.c        ****     
+ 184:main.c        ****     if(MYV<0){
+ 839              		.loc 1 184 0
+ 840 03fc D4F8A830 		ldr	r3, [r4, #168]
+ 841 0400 002B     		cmp	r3, #0
+ 842 0402 06DA     		bge	.L50
+ 185:main.c        ****     A1_Write(1);  
+ 843              		.loc 1 185 0
+ 844 0404 0120     		movs	r0, #1
+ 845 0406 FFF7FEFF 		bl	A1_Write
+ 846              	.LVL78:
+ 186:main.c        ****     B1_Write(0); 
+ 847              		.loc 1 186 0
+ 848 040a 0020     		movs	r0, #0
+ 849 040c FFF7FEFF 		bl	B1_Write
+ 850              	.LVL79:
+ 851 0410 05E0     		b	.L51
+ 852              	.L50:
+ 187:main.c        ****     }else{
+ 188:main.c        ****     A1_Write(0); 
+ 853              		.loc 1 188 0
+ 854 0412 0020     		movs	r0, #0
+ 855 0414 FFF7FEFF 		bl	A1_Write
+ 856              	.LVL80:
+ 189:main.c        ****     B1_Write(1);}
+ 857              		.loc 1 189 0
+ 858 0418 0120     		movs	r0, #1
+ 859 041a FFF7FEFF 		bl	B1_Write
+ 860              	.LVL81:
+ 861              	.L51:
+ 190:main.c        ****     
+ 191:main.c        ****    
+ 192:main.c        ****     if(MXV<0){
+ 862              		.loc 1 192 0
+ 863 041e 114B     		ldr	r3, .L58
+ 864 0420 1B6D     		ldr	r3, [r3, #80]
+ 865 0422 002B     		cmp	r3, #0
+ 866 0424 06DA     		bge	.L52
+ 193:main.c        ****     A2_Write(1); 
+ 867              		.loc 1 193 0
+ 868 0426 0120     		movs	r0, #1
+ 869 0428 FFF7FEFF 		bl	A2_Write
+ 870              	.LVL82:
+ 194:main.c        ****     B2_Write(0); 
+ 871              		.loc 1 194 0
+ 872 042c 0020     		movs	r0, #0
+ 873 042e FFF7FEFF 		bl	B2_Write
+ 874              	.LVL83:
+ 875 0432 05E0     		b	.L53
+ 876              	.L52:
+ 195:main.c        ****     }else{
+ 196:main.c        ****     A2_Write(0); 
+ 877              		.loc 1 196 0
+ 878 0434 0020     		movs	r0, #0
+ 879 0436 FFF7FEFF 		bl	A2_Write
+ 880              	.LVL84:
+ 197:main.c        ****     B2_Write(1);}
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 20
+
+
+ 881              		.loc 1 197 0
+ 882 043a 0120     		movs	r0, #1
+ 883 043c FFF7FEFF 		bl	B2_Write
+ 884              	.LVL85:
+ 885              	.L53:
+ 198:main.c        ****     
+ 199:main.c        ****     
+ 200:main.c        ****     PWM_WriteCompare1(abs(MXV)); 
+ 886              		.loc 1 200 0
+ 887 0440 084C     		ldr	r4, .L58
+ 888 0442 206D     		ldr	r0, [r4, #80]
+ 889 0444 0028     		cmp	r0, #0
+ 890 0446 B8BF     		it	lt
+ 891 0448 4042     		rsblt	r0, r0, #0
+ 892 044a C0B2     		uxtb	r0, r0
+ 893 044c FFF7FEFF 		bl	PWM_WriteCompare1
+ 894              	.LVL86:
+ 201:main.c        ****     PWM_WriteCompare2(abs(MYV));
+ 895              		.loc 1 201 0
+ 896 0450 D4F8A800 		ldr	r0, [r4, #168]
+ 897 0454 0028     		cmp	r0, #0
+ 898 0456 B8BF     		it	lt
+ 899 0458 4042     		rsblt	r0, r0, #0
+ 900 045a C0B2     		uxtb	r0, r0
+ 901 045c FFF7FEFF 		bl	PWM_WriteCompare2
+ 902              	.LVL87:
+ 202:main.c        ****     
+ 203:main.c        ****     
+ 204:main.c        ****     /*if(datorecibido[6]=='-'){
+ 205:main.c        ****     A1_Write(1);  
+ 206:main.c        ****     B1_Write(0); 
+ 207:main.c        ****     }else{
+ 208:main.c        ****     A1_Write(0); 
+ 209:main.c        ****     B1_Write(1);}
+ 210:main.c        ****     
+ 211:main.c        ****    
+ 212:main.c        ****     if(datorecibido[1]=='-'){
+ 213:main.c        ****     A2_Write(1); 
+ 214:main.c        ****     B2_Write(0); 
+ 215:main.c        ****     }else{
+ 216:main.c        ****     A2_Write(0); 
+ 217:main.c        ****     B2_Write(1);}*/
+ 218:main.c        ****     }
+ 903              		.loc 1 218 0
+ 904 0460 ECE5     		b	.L54
+ 905              	.L59:
+ 906 0462 00BF     		.align	2
+ 907              	.L58:
+ 908 0464 00000000 		.word	.LANCHOR0
+ 909              		.cfi_endproc
+ 910              	.LFE71:
+ 911              		.size	main, .-main
+ 912              		.comm	DY,1,1
+ 913              		.comm	DX,1,1
+ 914              		.comm	MY,2,4
+ 915              		.comm	MX,2,4
+ 916              		.comm	datoenviado,20,4
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 21
+
+
+ 917              		.global	reteaay
+ 918              		.global	reteay
+ 919              		.global	retey
+ 920              		.global	retsaay
+ 921              		.global	retsay
+ 922              		.global	retsy
+ 923              		.global	refeaay
+ 924              		.global	refeay
+ 925              		.global	refey
+ 926              		.global	refsaay
+ 927              		.global	refsay
+ 928              		.global	refsy
+ 929              		.global	seaay
+ 930              		.global	seay
+ 931              		.global	sey
+ 932              		.global	ssaay
+ 933              		.global	ssay
+ 934              		.global	ssy
+ 935              		.global	reteaax
+ 936              		.global	reteax
+ 937              		.global	retex
+ 938              		.global	retsaax
+ 939              		.global	retsax
+ 940              		.global	retsx
+ 941              		.global	refeaax
+ 942              		.global	refeax
+ 943              		.global	refex
+ 944              		.global	refsaax
+ 945              		.global	refsax
+ 946              		.global	refsx
+ 947              		.global	seaax
+ 948              		.global	seax
+ 949              		.global	sex
+ 950              		.global	ssaax
+ 951              		.global	ssax
+ 952              		.global	ssx
+ 953              		.comm	xxx,4,4
+ 954              		.comm	rf,4,4
+ 955              		.comm	raa,4,4
+ 956              		.comm	rfa,4,4
+ 957              		.comm	rfaa,4,4
+ 958              		.global	KIX
+ 959              		.global	KPX
+ 960              		.comm	rety,4,4
+ 961              		.comm	retx,4,4
+ 962              		.global	MYV00
+ 963              		.global	MXV00
+ 964              		.global	MYV0
+ 965              		.global	MXV0
+ 966              		.global	MYV
+ 967              		.global	MXV
+ 968              		.global	x
+ 969              		.global	i
+ 970              		.global	pwmy
+ 971              		.global	pwmx
+ 972              		.global	countb
+ 973              		.global	counta
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 22
+
+
+ 974              		.comm	datorecibido,10,4
+ 975              		.bss
+ 976              		.align	3
+ 977              		.set	.LANCHOR0,. + 0
+ 978              		.type	counta, %object
+ 979              		.size	counta, 4
+ 980              	counta:
+ 981 0000 00000000 		.space	4
+ 982              		.type	countb, %object
+ 983              		.size	countb, 4
+ 984              	countb:
+ 985 0004 00000000 		.space	4
+ 986              		.type	i, %object
+ 987              		.size	i, 4
+ 988              	i:
+ 989 0008 00000000 		.space	4
+ 990              		.type	x, %object
+ 991              		.size	x, 4
+ 992              	x:
+ 993 000c 00000000 		.space	4
+ 994              		.type	MXV0, %object
+ 995              		.size	MXV0, 4
+ 996              	MXV0:
+ 997 0010 00000000 		.space	4
+ 998              		.type	MYV0, %object
+ 999              		.size	MYV0, 4
+ 1000              	MYV0:
+ 1001 0014 00000000 		.space	4
+ 1002              		.type	refex, %object
+ 1003              		.size	refex, 8
+ 1004              	refex:
+ 1005 0018 00000000 		.space	8
+ 1005      00000000 
+ 1006              		.type	sex, %object
+ 1007              		.size	sex, 8
+ 1008              	sex:
+ 1009 0020 00000000 		.space	8
+ 1009      00000000 
+ 1010              		.type	retex, %object
+ 1011              		.size	retex, 8
+ 1012              	retex:
+ 1013 0028 00000000 		.space	8
+ 1013      00000000 
+ 1014              		.type	retsax, %object
+ 1015              		.size	retsax, 8
+ 1016              	retsax:
+ 1017 0030 00000000 		.space	8
+ 1017      00000000 
+ 1018              		.type	reteax, %object
+ 1019              		.size	reteax, 8
+ 1020              	reteax:
+ 1021 0038 00000000 		.space	8
+ 1021      00000000 
+ 1022              		.type	reteaax, %object
+ 1023              		.size	reteaax, 8
+ 1024              	reteaax:
+ 1025 0040 00000000 		.space	8
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 23
+
+
+ 1025      00000000 
+ 1026              		.type	retsx, %object
+ 1027              		.size	retsx, 8
+ 1028              	retsx:
+ 1029 0048 00000000 		.space	8
+ 1029      00000000 
+ 1030              		.type	MXV, %object
+ 1031              		.size	MXV, 4
+ 1032              	MXV:
+ 1033 0050 00000000 		.space	4
+ 1034 0054 00000000 		.space	4
+ 1035              		.type	seax, %object
+ 1036              		.size	seax, 8
+ 1037              	seax:
+ 1038 0058 00000000 		.space	8
+ 1038      00000000 
+ 1039              		.type	seaax, %object
+ 1040              		.size	seaax, 8
+ 1041              	seaax:
+ 1042 0060 00000000 		.space	8
+ 1042      00000000 
+ 1043              		.type	retsaax, %object
+ 1044              		.size	retsaax, 8
+ 1045              	retsaax:
+ 1046 0068 00000000 		.space	8
+ 1046      00000000 
+ 1047              		.type	refey, %object
+ 1048              		.size	refey, 8
+ 1049              	refey:
+ 1050 0070 00000000 		.space	8
+ 1050      00000000 
+ 1051              		.type	sey, %object
+ 1052              		.size	sey, 8
+ 1053              	sey:
+ 1054 0078 00000000 		.space	8
+ 1054      00000000 
+ 1055              		.type	retey, %object
+ 1056              		.size	retey, 8
+ 1057              	retey:
+ 1058 0080 00000000 		.space	8
+ 1058      00000000 
+ 1059              		.type	retsay, %object
+ 1060              		.size	retsay, 8
+ 1061              	retsay:
+ 1062 0088 00000000 		.space	8
+ 1062      00000000 
+ 1063              		.type	reteay, %object
+ 1064              		.size	reteay, 8
+ 1065              	reteay:
+ 1066 0090 00000000 		.space	8
+ 1066      00000000 
+ 1067              		.type	reteaay, %object
+ 1068              		.size	reteaay, 8
+ 1069              	reteaay:
+ 1070 0098 00000000 		.space	8
+ 1070      00000000 
+ 1071              		.type	retsy, %object
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 24
+
+
+ 1072              		.size	retsy, 8
+ 1073              	retsy:
+ 1074 00a0 00000000 		.space	8
+ 1074      00000000 
+ 1075              		.type	MYV, %object
+ 1076              		.size	MYV, 4
+ 1077              	MYV:
+ 1078 00a8 00000000 		.space	4
+ 1079 00ac 00000000 		.space	4
+ 1080              		.type	seay, %object
+ 1081              		.size	seay, 8
+ 1082              	seay:
+ 1083 00b0 00000000 		.space	8
+ 1083      00000000 
+ 1084              		.type	seaay, %object
+ 1085              		.size	seaay, 8
+ 1086              	seaay:
+ 1087 00b8 00000000 		.space	8
+ 1087      00000000 
+ 1088              		.type	retsaay, %object
+ 1089              		.size	retsaay, 8
+ 1090              	retsaay:
+ 1091 00c0 00000000 		.space	8
+ 1091      00000000 
+ 1092              		.type	refeaay, %object
+ 1093              		.size	refeaay, 8
+ 1094              	refeaay:
+ 1095 00c8 00000000 		.space	8
+ 1095      00000000 
+ 1096              		.type	refeay, %object
+ 1097              		.size	refeay, 8
+ 1098              	refeay:
+ 1099 00d0 00000000 		.space	8
+ 1099      00000000 
+ 1100              		.type	refsaay, %object
+ 1101              		.size	refsaay, 8
+ 1102              	refsaay:
+ 1103 00d8 00000000 		.space	8
+ 1103      00000000 
+ 1104              		.type	refsay, %object
+ 1105              		.size	refsay, 8
+ 1106              	refsay:
+ 1107 00e0 00000000 		.space	8
+ 1107      00000000 
+ 1108              		.type	refsy, %object
+ 1109              		.size	refsy, 8
+ 1110              	refsy:
+ 1111 00e8 00000000 		.space	8
+ 1111      00000000 
+ 1112              		.type	ssaay, %object
+ 1113              		.size	ssaay, 8
+ 1114              	ssaay:
+ 1115 00f0 00000000 		.space	8
+ 1115      00000000 
+ 1116              		.type	ssay, %object
+ 1117              		.size	ssay, 8
+ 1118              	ssay:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 25
+
+
+ 1119 00f8 00000000 		.space	8
+ 1119      00000000 
+ 1120              		.type	ssy, %object
+ 1121              		.size	ssy, 8
+ 1122              	ssy:
+ 1123 0100 00000000 		.space	8
+ 1123      00000000 
+ 1124              		.type	refeaax, %object
+ 1125              		.size	refeaax, 8
+ 1126              	refeaax:
+ 1127 0108 00000000 		.space	8
+ 1127      00000000 
+ 1128              		.type	refeax, %object
+ 1129              		.size	refeax, 8
+ 1130              	refeax:
+ 1131 0110 00000000 		.space	8
+ 1131      00000000 
+ 1132              		.type	refsaax, %object
+ 1133              		.size	refsaax, 8
+ 1134              	refsaax:
+ 1135 0118 00000000 		.space	8
+ 1135      00000000 
+ 1136              		.type	refsax, %object
+ 1137              		.size	refsax, 8
+ 1138              	refsax:
+ 1139 0120 00000000 		.space	8
+ 1139      00000000 
+ 1140              		.type	refsx, %object
+ 1141              		.size	refsx, 8
+ 1142              	refsx:
+ 1143 0128 00000000 		.space	8
+ 1143      00000000 
+ 1144              		.type	ssaax, %object
+ 1145              		.size	ssaax, 8
+ 1146              	ssaax:
+ 1147 0130 00000000 		.space	8
+ 1147      00000000 
+ 1148              		.type	ssax, %object
+ 1149              		.size	ssax, 8
+ 1150              	ssax:
+ 1151 0138 00000000 		.space	8
+ 1151      00000000 
+ 1152              		.type	ssx, %object
+ 1153              		.size	ssx, 8
+ 1154              	ssx:
+ 1155 0140 00000000 		.space	8
+ 1155      00000000 
+ 1156              		.type	KIX, %object
+ 1157              		.size	KIX, 4
+ 1158              	KIX:
+ 1159 0148 00000000 		.space	4
+ 1160              		.type	KPX, %object
+ 1161              		.size	KPX, 4
+ 1162              	KPX:
+ 1163 014c 00000000 		.space	4
+ 1164              		.type	MYV00, %object
+ 1165              		.size	MYV00, 4
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 26
+
+
+ 1166              	MYV00:
+ 1167 0150 00000000 		.space	4
+ 1168              		.type	MXV00, %object
+ 1169              		.size	MXV00, 4
+ 1170              	MXV00:
+ 1171 0154 00000000 		.space	4
+ 1172              		.type	pwmy, %object
+ 1173              		.size	pwmy, 4
+ 1174              	pwmy:
+ 1175 0158 00000000 		.space	4
+ 1176              		.type	pwmx, %object
+ 1177              		.size	pwmx, 4
+ 1178              	pwmx:
+ 1179 015c 00000000 		.space	4
+ 1180              		.text
+ 1181              	.Letext0:
+ 1182              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1183              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1184              		.file 4 "Generated_Source\\PSoC5/core_cm3.h"
+ 1185              		.file 5 "Generated_Source\\PSoC5/UART.h"
+ 1186              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 1187              		.file 7 "Generated_Source\\PSoC5/PWM.h"
+ 1188              		.file 8 "Generated_Source\\PSoC5/Clock_1.h"
+ 1189              		.file 9 "Generated_Source\\PSoC5/isrRx.h"
+ 1190              		.file 10 "Generated_Source\\PSoC5/isrXP.h"
+ 1191              		.file 11 "Generated_Source\\PSoC5/isrXL.h"
+ 1192              		.file 12 "Generated_Source\\PSoC5/isrYP.h"
+ 1193              		.file 13 "Generated_Source\\PSoC5/isrYL.h"
+ 1194              		.file 14 "Generated_Source\\PSoC5/isrX.h"
+ 1195              		.file 15 "Generated_Source\\PSoC5/isrY.h"
+ 1196              		.file 16 "Generated_Source\\PSoC5/A1.h"
+ 1197              		.file 17 "Generated_Source\\PSoC5/B1.h"
+ 1198              		.file 18 "Generated_Source\\PSoC5/A2.h"
+ 1199              		.file 19 "Generated_Source\\PSoC5/B2.h"
+ 1200              		.section	.debug_info,"",%progbits
+ 1201              	.Ldebug_info0:
+ 1202 0000 990B0000 		.4byte	0xb99
+ 1203 0004 0400     		.2byte	0x4
+ 1204 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 1205 000a 04       		.byte	0x4
+ 1206 000b 01       		.uleb128 0x1
+ 1207 000c 82030000 		.4byte	.LASF89
+ 1208 0010 0C       		.byte	0xc
+ 1209 0011 AE020000 		.4byte	.LASF90
+ 1210 0015 30030000 		.4byte	.LASF91
+ 1211 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 1212 001d 00000000 		.4byte	0
+ 1213 0021 00000000 		.4byte	.Ldebug_line0
+ 1214 0025 02       		.uleb128 0x2
+ 1215 0026 01       		.byte	0x1
+ 1216 0027 06       		.byte	0x6
+ 1217 0028 C0010000 		.4byte	.LASF0
+ 1218 002c 02       		.uleb128 0x2
+ 1219 002d 01       		.byte	0x1
+ 1220 002e 08       		.byte	0x8
+ 1221 002f A8010000 		.4byte	.LASF1
+ 1222 0033 02       		.uleb128 0x2
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 27
+
+
+ 1223 0034 02       		.byte	0x2
+ 1224 0035 05       		.byte	0x5
+ 1225 0036 47000000 		.4byte	.LASF2
+ 1226 003a 02       		.uleb128 0x2
+ 1227 003b 02       		.byte	0x2
+ 1228 003c 07       		.byte	0x7
+ 1229 003d 3B020000 		.4byte	.LASF3
+ 1230 0041 03       		.uleb128 0x3
+ 1231 0042 8F020000 		.4byte	.LASF9
+ 1232 0046 02       		.byte	0x2
+ 1233 0047 3F       		.byte	0x3f
+ 1234 0048 4C000000 		.4byte	0x4c
+ 1235 004c 02       		.uleb128 0x2
+ 1236 004d 04       		.byte	0x4
+ 1237 004e 05       		.byte	0x5
+ 1238 004f 55010000 		.4byte	.LASF4
+ 1239 0053 02       		.uleb128 0x2
+ 1240 0054 04       		.byte	0x4
+ 1241 0055 07       		.byte	0x7
+ 1242 0056 B5020000 		.4byte	.LASF5
+ 1243 005a 02       		.uleb128 0x2
+ 1244 005b 08       		.byte	0x8
+ 1245 005c 05       		.byte	0x5
+ 1246 005d 15010000 		.4byte	.LASF6
+ 1247 0061 02       		.uleb128 0x2
+ 1248 0062 08       		.byte	0x8
+ 1249 0063 07       		.byte	0x7
+ 1250 0064 D4010000 		.4byte	.LASF7
+ 1251 0068 04       		.uleb128 0x4
+ 1252 0069 04       		.byte	0x4
+ 1253 006a 05       		.byte	0x5
+ 1254 006b 696E7400 		.ascii	"int\000"
+ 1255 006f 02       		.uleb128 0x2
+ 1256 0070 04       		.byte	0x4
+ 1257 0071 07       		.byte	0x7
+ 1258 0072 FB010000 		.4byte	.LASF8
+ 1259 0076 03       		.uleb128 0x3
+ 1260 0077 CC010000 		.4byte	.LASF10
+ 1261 007b 03       		.byte	0x3
+ 1262 007c 2C       		.byte	0x2c
+ 1263 007d 41000000 		.4byte	0x41
+ 1264 0081 02       		.uleb128 0x2
+ 1265 0082 04       		.byte	0x4
+ 1266 0083 04       		.byte	0x4
+ 1267 0084 0F010000 		.4byte	.LASF11
+ 1268 0088 02       		.uleb128 0x2
+ 1269 0089 08       		.byte	0x8
+ 1270 008a 04       		.byte	0x4
+ 1271 008b C7020000 		.4byte	.LASF12
+ 1272 008f 02       		.uleb128 0x2
+ 1273 0090 01       		.byte	0x1
+ 1274 0091 08       		.byte	0x8
+ 1275 0092 62020000 		.4byte	.LASF13
+ 1276 0096 02       		.uleb128 0x2
+ 1277 0097 08       		.byte	0x8
+ 1278 0098 04       		.byte	0x4
+ 1279 0099 8D010000 		.4byte	.LASF14
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 28
+
+
+ 1280 009d 02       		.uleb128 0x2
+ 1281 009e 04       		.byte	0x4
+ 1282 009f 07       		.byte	0x7
+ 1283 00a0 56000000 		.4byte	.LASF15
+ 1284 00a4 05       		.uleb128 0x5
+ 1285 00a5 67020000 		.4byte	.LASF16
+ 1286 00a9 01       		.byte	0x1
+ 1287 00aa 20       		.byte	0x20
+ 1288 00ab 00000000 		.4byte	.LFB64
+ 1289 00af 10000000 		.4byte	.LFE64-.LFB64
+ 1290 00b3 01       		.uleb128 0x1
+ 1291 00b4 9C       		.byte	0x9c
+ 1292 00b5 05       		.uleb128 0x5
+ 1293 00b6 7E020000 		.4byte	.LASF17
+ 1294 00ba 01       		.byte	0x1
+ 1295 00bb 23       		.byte	0x23
+ 1296 00bc 00000000 		.4byte	.LFB65
+ 1297 00c0 10000000 		.4byte	.LFE65-.LFB65
+ 1298 00c4 01       		.uleb128 0x1
+ 1299 00c5 9C       		.byte	0x9c
+ 1300 00c6 05       		.uleb128 0x5
+ 1301 00c7 1D030000 		.4byte	.LASF18
+ 1302 00cb 01       		.byte	0x1
+ 1303 00cc 26       		.byte	0x26
+ 1304 00cd 00000000 		.4byte	.LFB66
+ 1305 00d1 10000000 		.4byte	.LFE66-.LFB66
+ 1306 00d5 01       		.uleb128 0x1
+ 1307 00d6 9C       		.byte	0x9c
+ 1308 00d7 05       		.uleb128 0x5
+ 1309 00d8 49010000 		.4byte	.LASF19
+ 1310 00dc 01       		.byte	0x1
+ 1311 00dd 29       		.byte	0x29
+ 1312 00de 00000000 		.4byte	.LFB67
+ 1313 00e2 10000000 		.4byte	.LFE67-.LFB67
+ 1314 00e6 01       		.uleb128 0x1
+ 1315 00e7 9C       		.byte	0x9c
+ 1316 00e8 05       		.uleb128 0x5
+ 1317 00e9 F0010000 		.4byte	.LASF20
+ 1318 00ed 01       		.byte	0x1
+ 1319 00ee 2B       		.byte	0x2b
+ 1320 00ef 00000000 		.4byte	.LFB68
+ 1321 00f3 0C000000 		.4byte	.LFE68-.LFB68
+ 1322 00f7 01       		.uleb128 0x1
+ 1323 00f8 9C       		.byte	0x9c
+ 1324 00f9 05       		.uleb128 0x5
+ 1325 00fa 04010000 		.4byte	.LASF21
+ 1326 00fe 01       		.byte	0x1
+ 1327 00ff 2F       		.byte	0x2f
+ 1328 0100 00000000 		.4byte	.LFB69
+ 1329 0104 0C000000 		.4byte	.LFE69-.LFB69
+ 1330 0108 01       		.uleb128 0x1
+ 1331 0109 9C       		.byte	0x9c
+ 1332 010a 06       		.uleb128 0x6
+ 1333 010b 3B000000 		.4byte	.LASF92
+ 1334 010f 01       		.byte	0x1
+ 1335 0110 1B       		.byte	0x1b
+ 1336 0111 00000000 		.4byte	.LFB63
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 29
+
+
+ 1337 0115 28000000 		.4byte	.LFE63-.LFB63
+ 1338 0119 01       		.uleb128 0x1
+ 1339 011a 9C       		.byte	0x9c
+ 1340 011b 29010000 		.4byte	0x129
+ 1341 011f 07       		.uleb128 0x7
+ 1342 0120 0A000000 		.4byte	.LVL0
+ 1343 0124 B50A0000 		.4byte	0xab5
+ 1344 0128 00       		.byte	0
+ 1345 0129 08       		.uleb128 0x8
+ 1346 012a 3B010000 		.4byte	.LASF93
+ 1347 012e 01       		.byte	0x1
+ 1348 012f 34       		.byte	0x34
+ 1349 0130 00000000 		.4byte	.LFB70
+ 1350 0134 18000000 		.4byte	.LFE70-.LFB70
+ 1351 0138 01       		.uleb128 0x1
+ 1352 0139 9C       		.byte	0x9c
+ 1353 013a 8C010000 		.4byte	0x18c
+ 1354 013e 09       		.uleb128 0x9
+ 1355 013f 76616C00 		.ascii	"val\000"
+ 1356 0143 01       		.byte	0x1
+ 1357 0144 34       		.byte	0x34
+ 1358 0145 68000000 		.4byte	0x68
+ 1359 0149 00000000 		.4byte	.LLST0
+ 1360 014d 0A       		.uleb128 0xa
+ 1361 014e 71000000 		.4byte	.LASF94
+ 1362 0152 01       		.byte	0x1
+ 1363 0153 36       		.byte	0x36
+ 1364 0154 8C010000 		.4byte	0x18c
+ 1365 0158 02       		.uleb128 0x2
+ 1366 0159 91       		.byte	0x91
+ 1367 015a 54       		.sleb128 -44
+ 1368 015b 0B       		.uleb128 0xb
+ 1369 015c 0C000000 		.4byte	.LVL2
+ 1370 0160 C00A0000 		.4byte	0xac0
+ 1371 0164 7B010000 		.4byte	0x17b
+ 1372 0168 0C       		.uleb128 0xc
+ 1373 0169 01       		.uleb128 0x1
+ 1374 016a 50       		.byte	0x50
+ 1375 016b 03       		.uleb128 0x3
+ 1376 016c F3       		.byte	0xf3
+ 1377 016d 01       		.uleb128 0x1
+ 1378 016e 50       		.byte	0x50
+ 1379 016f 0C       		.uleb128 0xc
+ 1380 0170 01       		.uleb128 0x1
+ 1381 0171 51       		.byte	0x51
+ 1382 0172 02       		.uleb128 0x2
+ 1383 0173 91       		.byte	0x91
+ 1384 0174 54       		.sleb128 -44
+ 1385 0175 0C       		.uleb128 0xc
+ 1386 0176 01       		.uleb128 0x1
+ 1387 0177 52       		.byte	0x52
+ 1388 0178 01       		.uleb128 0x1
+ 1389 0179 3A       		.byte	0x3a
+ 1390 017a 00       		.byte	0
+ 1391 017b 0D       		.uleb128 0xd
+ 1392 017c 12000000 		.4byte	.LVL3
+ 1393 0180 CB0A0000 		.4byte	0xacb
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 30
+
+
+ 1394 0184 0C       		.uleb128 0xc
+ 1395 0185 01       		.uleb128 0x1
+ 1396 0186 50       		.byte	0x50
+ 1397 0187 02       		.uleb128 0x2
+ 1398 0188 91       		.byte	0x91
+ 1399 0189 54       		.sleb128 -44
+ 1400 018a 00       		.byte	0
+ 1401 018b 00       		.byte	0
+ 1402 018c 0E       		.uleb128 0xe
+ 1403 018d 8F000000 		.4byte	0x8f
+ 1404 0191 9C010000 		.4byte	0x19c
+ 1405 0195 0F       		.uleb128 0xf
+ 1406 0196 9D000000 		.4byte	0x9d
+ 1407 019a 20       		.byte	0x20
+ 1408 019b 00       		.byte	0
+ 1409 019c 10       		.uleb128 0x10
+ 1410 019d 6C000000 		.4byte	.LASF95
+ 1411 01a1 01       		.byte	0x1
+ 1412 01a2 3D       		.byte	0x3d
+ 1413 01a3 68000000 		.4byte	0x68
+ 1414 01a7 00000000 		.4byte	.LFB71
+ 1415 01ab 68040000 		.4byte	.LFE71-.LFB71
+ 1416 01af 01       		.uleb128 0x1
+ 1417 01b0 9C       		.byte	0x9c
+ 1418 01b1 4E060000 		.4byte	0x64e
+ 1419 01b5 07       		.uleb128 0x7
+ 1420 01b6 0A000000 		.4byte	.LVL4
+ 1421 01ba D60A0000 		.4byte	0xad6
+ 1422 01be 07       		.uleb128 0x7
+ 1423 01bf 0E000000 		.4byte	.LVL5
+ 1424 01c3 E10A0000 		.4byte	0xae1
+ 1425 01c7 07       		.uleb128 0x7
+ 1426 01c8 12000000 		.4byte	.LVL6
+ 1427 01cc EC0A0000 		.4byte	0xaec
+ 1428 01d0 0B       		.uleb128 0xb
+ 1429 01d1 18000000 		.4byte	.LVL7
+ 1430 01d5 F70A0000 		.4byte	0xaf7
+ 1431 01d9 E7010000 		.4byte	0x1e7
+ 1432 01dd 0C       		.uleb128 0xc
+ 1433 01de 01       		.uleb128 0x1
+ 1434 01df 50       		.byte	0x50
+ 1435 01e0 05       		.uleb128 0x5
+ 1436 01e1 03       		.byte	0x3
+ 1437 01e2 00000000 		.4byte	InterruptRX
+ 1438 01e6 00       		.byte	0
+ 1439 01e7 0B       		.uleb128 0xb
+ 1440 01e8 1E000000 		.4byte	.LVL8
+ 1441 01ec 020B0000 		.4byte	0xb02
+ 1442 01f0 FE010000 		.4byte	0x1fe
+ 1443 01f4 0C       		.uleb128 0xc
+ 1444 01f5 01       		.uleb128 0x1
+ 1445 01f6 50       		.byte	0x50
+ 1446 01f7 05       		.uleb128 0x5
+ 1447 01f8 03       		.byte	0x3
+ 1448 01f9 00000000 		.4byte	InterruptXP
+ 1449 01fd 00       		.byte	0
+ 1450 01fe 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 31
+
+
+ 1451 01ff 24000000 		.4byte	.LVL9
+ 1452 0203 0D0B0000 		.4byte	0xb0d
+ 1453 0207 15020000 		.4byte	0x215
+ 1454 020b 0C       		.uleb128 0xc
+ 1455 020c 01       		.uleb128 0x1
+ 1456 020d 50       		.byte	0x50
+ 1457 020e 05       		.uleb128 0x5
+ 1458 020f 03       		.byte	0x3
+ 1459 0210 00000000 		.4byte	InterruptXL
+ 1460 0214 00       		.byte	0
+ 1461 0215 0B       		.uleb128 0xb
+ 1462 0216 2A000000 		.4byte	.LVL10
+ 1463 021a 180B0000 		.4byte	0xb18
+ 1464 021e 2C020000 		.4byte	0x22c
+ 1465 0222 0C       		.uleb128 0xc
+ 1466 0223 01       		.uleb128 0x1
+ 1467 0224 50       		.byte	0x50
+ 1468 0225 05       		.uleb128 0x5
+ 1469 0226 03       		.byte	0x3
+ 1470 0227 00000000 		.4byte	InterruptYP
+ 1471 022b 00       		.byte	0
+ 1472 022c 0B       		.uleb128 0xb
+ 1473 022d 30000000 		.4byte	.LVL11
+ 1474 0231 230B0000 		.4byte	0xb23
+ 1475 0235 43020000 		.4byte	0x243
+ 1476 0239 0C       		.uleb128 0xc
+ 1477 023a 01       		.uleb128 0x1
+ 1478 023b 50       		.byte	0x50
+ 1479 023c 05       		.uleb128 0x5
+ 1480 023d 03       		.byte	0x3
+ 1481 023e 00000000 		.4byte	InterruptYL
+ 1482 0242 00       		.byte	0
+ 1483 0243 0B       		.uleb128 0xb
+ 1484 0244 36000000 		.4byte	.LVL12
+ 1485 0248 2E0B0000 		.4byte	0xb2e
+ 1486 024c 5A020000 		.4byte	0x25a
+ 1487 0250 0C       		.uleb128 0xc
+ 1488 0251 01       		.uleb128 0x1
+ 1489 0252 50       		.byte	0x50
+ 1490 0253 05       		.uleb128 0x5
+ 1491 0254 03       		.byte	0x3
+ 1492 0255 00000000 		.4byte	InterruptX
+ 1493 0259 00       		.byte	0
+ 1494 025a 0B       		.uleb128 0xb
+ 1495 025b 3C000000 		.4byte	.LVL13
+ 1496 025f 390B0000 		.4byte	0xb39
+ 1497 0263 71020000 		.4byte	0x271
+ 1498 0267 0C       		.uleb128 0xc
+ 1499 0268 01       		.uleb128 0x1
+ 1500 0269 50       		.byte	0x50
+ 1501 026a 05       		.uleb128 0x5
+ 1502 026b 03       		.byte	0x3
+ 1503 026c 00000000 		.4byte	InterruptY
+ 1504 0270 00       		.byte	0
+ 1505 0271 0B       		.uleb128 0xb
+ 1506 0272 66000000 		.4byte	.LVL14
+ 1507 0276 440B0000 		.4byte	0xb44
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 32
+
+
+ 1508 027a 88020000 		.4byte	0x288
+ 1509 027e 0C       		.uleb128 0xc
+ 1510 027f 01       		.uleb128 0x1
+ 1511 0280 50       		.byte	0x50
+ 1512 0281 05       		.uleb128 0x5
+ 1513 0282 03       		.byte	0x3
+ 1514 0283 00000000 		.4byte	MX
+ 1515 0287 00       		.byte	0
+ 1516 0288 0B       		.uleb128 0xb
+ 1517 0289 8A000000 		.4byte	.LVL15
+ 1518 028d 440B0000 		.4byte	0xb44
+ 1519 0291 9F020000 		.4byte	0x29f
+ 1520 0295 0C       		.uleb128 0xc
+ 1521 0296 01       		.uleb128 0x1
+ 1522 0297 50       		.byte	0x50
+ 1523 0298 05       		.uleb128 0x5
+ 1524 0299 03       		.byte	0x3
+ 1525 029a 00000000 		.4byte	MY
+ 1526 029e 00       		.byte	0
+ 1527 029f 0B       		.uleb128 0xb
+ 1528 02a0 04020000 		.4byte	.LVL36
+ 1529 02a4 4F0B0000 		.4byte	0xb4f
+ 1530 02a8 B3020000 		.4byte	0x2b3
+ 1531 02ac 0C       		.uleb128 0xc
+ 1532 02ad 01       		.uleb128 0x1
+ 1533 02ae 50       		.byte	0x50
+ 1534 02af 02       		.uleb128 0x2
+ 1535 02b0 08       		.byte	0x8
+ 1536 02b1 30       		.byte	0x30
+ 1537 02b2 00       		.byte	0
+ 1538 02b3 0B       		.uleb128 0xb
+ 1539 02b4 0A020000 		.4byte	.LVL37
+ 1540 02b8 4F0B0000 		.4byte	0xb4f
+ 1541 02bc C7020000 		.4byte	0x2c7
+ 1542 02c0 0C       		.uleb128 0xc
+ 1543 02c1 01       		.uleb128 0x1
+ 1544 02c2 50       		.byte	0x50
+ 1545 02c3 02       		.uleb128 0x2
+ 1546 02c4 08       		.byte	0x8
+ 1547 02c5 30       		.byte	0x30
+ 1548 02c6 00       		.byte	0
+ 1549 02c7 0B       		.uleb128 0xb
+ 1550 02c8 1A020000 		.4byte	.LVL38
+ 1551 02cc 4F0B0000 		.4byte	0xb4f
+ 1552 02d0 DB020000 		.4byte	0x2db
+ 1553 02d4 0C       		.uleb128 0xc
+ 1554 02d5 01       		.uleb128 0x1
+ 1555 02d6 50       		.byte	0x50
+ 1556 02d7 02       		.uleb128 0x2
+ 1557 02d8 08       		.byte	0x8
+ 1558 02d9 30       		.byte	0x30
+ 1559 02da 00       		.byte	0
+ 1560 02db 0B       		.uleb128 0xb
+ 1561 02dc 2A020000 		.4byte	.LVL39
+ 1562 02e0 4F0B0000 		.4byte	0xb4f
+ 1563 02e4 EF020000 		.4byte	0x2ef
+ 1564 02e8 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 33
+
+
+ 1565 02e9 01       		.uleb128 0x1
+ 1566 02ea 50       		.byte	0x50
+ 1567 02eb 02       		.uleb128 0x2
+ 1568 02ec 08       		.byte	0x8
+ 1569 02ed 30       		.byte	0x30
+ 1570 02ee 00       		.byte	0
+ 1571 02ef 0B       		.uleb128 0xb
+ 1572 02f0 30020000 		.4byte	.LVL40
+ 1573 02f4 4F0B0000 		.4byte	0xb4f
+ 1574 02f8 03030000 		.4byte	0x303
+ 1575 02fc 0C       		.uleb128 0xc
+ 1576 02fd 01       		.uleb128 0x1
+ 1577 02fe 50       		.byte	0x50
+ 1578 02ff 02       		.uleb128 0x2
+ 1579 0300 08       		.byte	0x8
+ 1580 0301 30       		.byte	0x30
+ 1581 0302 00       		.byte	0
+ 1582 0303 0B       		.uleb128 0xb
+ 1583 0304 40020000 		.4byte	.LVL41
+ 1584 0308 4F0B0000 		.4byte	0xb4f
+ 1585 030c 17030000 		.4byte	0x317
+ 1586 0310 0C       		.uleb128 0xc
+ 1587 0311 01       		.uleb128 0x1
+ 1588 0312 50       		.byte	0x50
+ 1589 0313 02       		.uleb128 0x2
+ 1590 0314 08       		.byte	0x8
+ 1591 0315 30       		.byte	0x30
+ 1592 0316 00       		.byte	0
+ 1593 0317 0B       		.uleb128 0xb
+ 1594 0318 4C020000 		.4byte	.LVL42
+ 1595 031c 4F0B0000 		.4byte	0xb4f
+ 1596 0320 2B030000 		.4byte	0x32b
+ 1597 0324 0C       		.uleb128 0xc
+ 1598 0325 01       		.uleb128 0x1
+ 1599 0326 50       		.byte	0x50
+ 1600 0327 02       		.uleb128 0x2
+ 1601 0328 08       		.byte	0x8
+ 1602 0329 30       		.byte	0x30
+ 1603 032a 00       		.byte	0
+ 1604 032b 0B       		.uleb128 0xb
+ 1605 032c 52020000 		.4byte	.LVL43
+ 1606 0330 4F0B0000 		.4byte	0xb4f
+ 1607 0334 3F030000 		.4byte	0x33f
+ 1608 0338 0C       		.uleb128 0xc
+ 1609 0339 01       		.uleb128 0x1
+ 1610 033a 50       		.byte	0x50
+ 1611 033b 02       		.uleb128 0x2
+ 1612 033c 08       		.byte	0x8
+ 1613 033d 30       		.byte	0x30
+ 1614 033e 00       		.byte	0
+ 1615 033f 0B       		.uleb128 0xb
+ 1616 0340 58020000 		.4byte	.LVL44
+ 1617 0344 4F0B0000 		.4byte	0xb4f
+ 1618 0348 53030000 		.4byte	0x353
+ 1619 034c 0C       		.uleb128 0xc
+ 1620 034d 01       		.uleb128 0x1
+ 1621 034e 50       		.byte	0x50
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 34
+
+
+ 1622 034f 02       		.uleb128 0x2
+ 1623 0350 08       		.byte	0x8
+ 1624 0351 30       		.byte	0x30
+ 1625 0352 00       		.byte	0
+ 1626 0353 07       		.uleb128 0x7
+ 1627 0354 5E020000 		.4byte	.LVL45
+ 1628 0358 29010000 		.4byte	0x129
+ 1629 035c 0B       		.uleb128 0xb
+ 1630 035d 64020000 		.4byte	.LVL46
+ 1631 0361 4F0B0000 		.4byte	0xb4f
+ 1632 0365 70030000 		.4byte	0x370
+ 1633 0369 0C       		.uleb128 0xc
+ 1634 036a 01       		.uleb128 0x1
+ 1635 036b 50       		.byte	0x50
+ 1636 036c 02       		.uleb128 0x2
+ 1637 036d 08       		.byte	0x8
+ 1638 036e 2C       		.byte	0x2c
+ 1639 036f 00       		.byte	0
+ 1640 0370 0B       		.uleb128 0xb
+ 1641 0371 74020000 		.4byte	.LVL47
+ 1642 0375 4F0B0000 		.4byte	0xb4f
+ 1643 0379 84030000 		.4byte	0x384
+ 1644 037d 0C       		.uleb128 0xc
+ 1645 037e 01       		.uleb128 0x1
+ 1646 037f 50       		.byte	0x50
+ 1647 0380 02       		.uleb128 0x2
+ 1648 0381 08       		.byte	0x8
+ 1649 0382 30       		.byte	0x30
+ 1650 0383 00       		.byte	0
+ 1651 0384 0B       		.uleb128 0xb
+ 1652 0385 7A020000 		.4byte	.LVL48
+ 1653 0389 4F0B0000 		.4byte	0xb4f
+ 1654 038d 98030000 		.4byte	0x398
+ 1655 0391 0C       		.uleb128 0xc
+ 1656 0392 01       		.uleb128 0x1
+ 1657 0393 50       		.byte	0x50
+ 1658 0394 02       		.uleb128 0x2
+ 1659 0395 08       		.byte	0x8
+ 1660 0396 30       		.byte	0x30
+ 1661 0397 00       		.byte	0
+ 1662 0398 0B       		.uleb128 0xb
+ 1663 0399 8A020000 		.4byte	.LVL49
+ 1664 039d 4F0B0000 		.4byte	0xb4f
+ 1665 03a1 AC030000 		.4byte	0x3ac
+ 1666 03a5 0C       		.uleb128 0xc
+ 1667 03a6 01       		.uleb128 0x1
+ 1668 03a7 50       		.byte	0x50
+ 1669 03a8 02       		.uleb128 0x2
+ 1670 03a9 08       		.byte	0x8
+ 1671 03aa 30       		.byte	0x30
+ 1672 03ab 00       		.byte	0
+ 1673 03ac 0B       		.uleb128 0xb
+ 1674 03ad 9A020000 		.4byte	.LVL50
+ 1675 03b1 4F0B0000 		.4byte	0xb4f
+ 1676 03b5 C0030000 		.4byte	0x3c0
+ 1677 03b9 0C       		.uleb128 0xc
+ 1678 03ba 01       		.uleb128 0x1
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 35
+
+
+ 1679 03bb 50       		.byte	0x50
+ 1680 03bc 02       		.uleb128 0x2
+ 1681 03bd 08       		.byte	0x8
+ 1682 03be 30       		.byte	0x30
+ 1683 03bf 00       		.byte	0
+ 1684 03c0 0B       		.uleb128 0xb
+ 1685 03c1 A0020000 		.4byte	.LVL51
+ 1686 03c5 4F0B0000 		.4byte	0xb4f
+ 1687 03c9 D4030000 		.4byte	0x3d4
+ 1688 03cd 0C       		.uleb128 0xc
+ 1689 03ce 01       		.uleb128 0x1
+ 1690 03cf 50       		.byte	0x50
+ 1691 03d0 02       		.uleb128 0x2
+ 1692 03d1 08       		.byte	0x8
+ 1693 03d2 30       		.byte	0x30
+ 1694 03d3 00       		.byte	0
+ 1695 03d4 0B       		.uleb128 0xb
+ 1696 03d5 B0020000 		.4byte	.LVL52
+ 1697 03d9 4F0B0000 		.4byte	0xb4f
+ 1698 03dd E8030000 		.4byte	0x3e8
+ 1699 03e1 0C       		.uleb128 0xc
+ 1700 03e2 01       		.uleb128 0x1
+ 1701 03e3 50       		.byte	0x50
+ 1702 03e4 02       		.uleb128 0x2
+ 1703 03e5 08       		.byte	0x8
+ 1704 03e6 30       		.byte	0x30
+ 1705 03e7 00       		.byte	0
+ 1706 03e8 0B       		.uleb128 0xb
+ 1707 03e9 BC020000 		.4byte	.LVL53
+ 1708 03ed 4F0B0000 		.4byte	0xb4f
+ 1709 03f1 FC030000 		.4byte	0x3fc
+ 1710 03f5 0C       		.uleb128 0xc
+ 1711 03f6 01       		.uleb128 0x1
+ 1712 03f7 50       		.byte	0x50
+ 1713 03f8 02       		.uleb128 0x2
+ 1714 03f9 08       		.byte	0x8
+ 1715 03fa 30       		.byte	0x30
+ 1716 03fb 00       		.byte	0
+ 1717 03fc 0B       		.uleb128 0xb
+ 1718 03fd C2020000 		.4byte	.LVL54
+ 1719 0401 4F0B0000 		.4byte	0xb4f
+ 1720 0405 10040000 		.4byte	0x410
+ 1721 0409 0C       		.uleb128 0xc
+ 1722 040a 01       		.uleb128 0x1
+ 1723 040b 50       		.byte	0x50
+ 1724 040c 02       		.uleb128 0x2
+ 1725 040d 08       		.byte	0x8
+ 1726 040e 30       		.byte	0x30
+ 1727 040f 00       		.byte	0
+ 1728 0410 0B       		.uleb128 0xb
+ 1729 0411 C8020000 		.4byte	.LVL55
+ 1730 0415 4F0B0000 		.4byte	0xb4f
+ 1731 0419 24040000 		.4byte	0x424
+ 1732 041d 0C       		.uleb128 0xc
+ 1733 041e 01       		.uleb128 0x1
+ 1734 041f 50       		.byte	0x50
+ 1735 0420 02       		.uleb128 0x2
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 36
+
+
+ 1736 0421 08       		.byte	0x8
+ 1737 0422 30       		.byte	0x30
+ 1738 0423 00       		.byte	0
+ 1739 0424 07       		.uleb128 0x7
+ 1740 0425 30030000 		.4byte	.LVL56
+ 1741 0429 29010000 		.4byte	0x129
+ 1742 042d 0B       		.uleb128 0xb
+ 1743 042e 36030000 		.4byte	.LVL57
+ 1744 0432 4F0B0000 		.4byte	0xb4f
+ 1745 0436 41040000 		.4byte	0x441
+ 1746 043a 0C       		.uleb128 0xc
+ 1747 043b 01       		.uleb128 0x1
+ 1748 043c 50       		.byte	0x50
+ 1749 043d 02       		.uleb128 0x2
+ 1750 043e 08       		.byte	0x8
+ 1751 043f 2C       		.byte	0x2c
+ 1752 0440 00       		.byte	0
+ 1753 0441 0B       		.uleb128 0xb
+ 1754 0442 46030000 		.4byte	.LVL58
+ 1755 0446 4F0B0000 		.4byte	0xb4f
+ 1756 044a 55040000 		.4byte	0x455
+ 1757 044e 0C       		.uleb128 0xc
+ 1758 044f 01       		.uleb128 0x1
+ 1759 0450 50       		.byte	0x50
+ 1760 0451 02       		.uleb128 0x2
+ 1761 0452 08       		.byte	0x8
+ 1762 0453 30       		.byte	0x30
+ 1763 0454 00       		.byte	0
+ 1764 0455 0B       		.uleb128 0xb
+ 1765 0456 4C030000 		.4byte	.LVL59
+ 1766 045a 4F0B0000 		.4byte	0xb4f
+ 1767 045e 69040000 		.4byte	0x469
+ 1768 0462 0C       		.uleb128 0xc
+ 1769 0463 01       		.uleb128 0x1
+ 1770 0464 50       		.byte	0x50
+ 1771 0465 02       		.uleb128 0x2
+ 1772 0466 08       		.byte	0x8
+ 1773 0467 30       		.byte	0x30
+ 1774 0468 00       		.byte	0
+ 1775 0469 0B       		.uleb128 0xb
+ 1776 046a 5C030000 		.4byte	.LVL60
+ 1777 046e 4F0B0000 		.4byte	0xb4f
+ 1778 0472 7D040000 		.4byte	0x47d
+ 1779 0476 0C       		.uleb128 0xc
+ 1780 0477 01       		.uleb128 0x1
+ 1781 0478 50       		.byte	0x50
+ 1782 0479 02       		.uleb128 0x2
+ 1783 047a 08       		.byte	0x8
+ 1784 047b 30       		.byte	0x30
+ 1785 047c 00       		.byte	0
+ 1786 047d 0B       		.uleb128 0xb
+ 1787 047e 68030000 		.4byte	.LVL61
+ 1788 0482 4F0B0000 		.4byte	0xb4f
+ 1789 0486 91040000 		.4byte	0x491
+ 1790 048a 0C       		.uleb128 0xc
+ 1791 048b 01       		.uleb128 0x1
+ 1792 048c 50       		.byte	0x50
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 37
+
+
+ 1793 048d 02       		.uleb128 0x2
+ 1794 048e 08       		.byte	0x8
+ 1795 048f 30       		.byte	0x30
+ 1796 0490 00       		.byte	0
+ 1797 0491 0B       		.uleb128 0xb
+ 1798 0492 6E030000 		.4byte	.LVL62
+ 1799 0496 4F0B0000 		.4byte	0xb4f
+ 1800 049a A5040000 		.4byte	0x4a5
+ 1801 049e 0C       		.uleb128 0xc
+ 1802 049f 01       		.uleb128 0x1
+ 1803 04a0 50       		.byte	0x50
+ 1804 04a1 02       		.uleb128 0x2
+ 1805 04a2 08       		.byte	0x8
+ 1806 04a3 30       		.byte	0x30
+ 1807 04a4 00       		.byte	0
+ 1808 04a5 0B       		.uleb128 0xb
+ 1809 04a6 74030000 		.4byte	.LVL63
+ 1810 04aa 4F0B0000 		.4byte	0xb4f
+ 1811 04ae B9040000 		.4byte	0x4b9
+ 1812 04b2 0C       		.uleb128 0xc
+ 1813 04b3 01       		.uleb128 0x1
+ 1814 04b4 50       		.byte	0x50
+ 1815 04b5 02       		.uleb128 0x2
+ 1816 04b6 08       		.byte	0x8
+ 1817 04b7 30       		.byte	0x30
+ 1818 04b8 00       		.byte	0
+ 1819 04b9 07       		.uleb128 0x7
+ 1820 04ba 7A030000 		.4byte	.LVL64
+ 1821 04be 29010000 		.4byte	0x129
+ 1822 04c2 0B       		.uleb128 0xb
+ 1823 04c3 80030000 		.4byte	.LVL65
+ 1824 04c7 4F0B0000 		.4byte	0xb4f
+ 1825 04cb D6040000 		.4byte	0x4d6
+ 1826 04cf 0C       		.uleb128 0xc
+ 1827 04d0 01       		.uleb128 0x1
+ 1828 04d1 50       		.byte	0x50
+ 1829 04d2 02       		.uleb128 0x2
+ 1830 04d3 08       		.byte	0x8
+ 1831 04d4 2C       		.byte	0x2c
+ 1832 04d5 00       		.byte	0
+ 1833 04d6 0B       		.uleb128 0xb
+ 1834 04d7 92030000 		.4byte	.LVL66
+ 1835 04db 4F0B0000 		.4byte	0xb4f
+ 1836 04df EA040000 		.4byte	0x4ea
+ 1837 04e3 0C       		.uleb128 0xc
+ 1838 04e4 01       		.uleb128 0x1
+ 1839 04e5 50       		.byte	0x50
+ 1840 04e6 02       		.uleb128 0x2
+ 1841 04e7 08       		.byte	0x8
+ 1842 04e8 30       		.byte	0x30
+ 1843 04e9 00       		.byte	0
+ 1844 04ea 0B       		.uleb128 0xb
+ 1845 04eb 98030000 		.4byte	.LVL67
+ 1846 04ef 4F0B0000 		.4byte	0xb4f
+ 1847 04f3 FE040000 		.4byte	0x4fe
+ 1848 04f7 0C       		.uleb128 0xc
+ 1849 04f8 01       		.uleb128 0x1
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 38
+
+
+ 1850 04f9 50       		.byte	0x50
+ 1851 04fa 02       		.uleb128 0x2
+ 1852 04fb 08       		.byte	0x8
+ 1853 04fc 30       		.byte	0x30
+ 1854 04fd 00       		.byte	0
+ 1855 04fe 0B       		.uleb128 0xb
+ 1856 04ff AA030000 		.4byte	.LVL68
+ 1857 0503 4F0B0000 		.4byte	0xb4f
+ 1858 0507 12050000 		.4byte	0x512
+ 1859 050b 0C       		.uleb128 0xc
+ 1860 050c 01       		.uleb128 0x1
+ 1861 050d 50       		.byte	0x50
+ 1862 050e 02       		.uleb128 0x2
+ 1863 050f 08       		.byte	0x8
+ 1864 0510 30       		.byte	0x30
+ 1865 0511 00       		.byte	0
+ 1866 0512 0B       		.uleb128 0xb
+ 1867 0513 B8030000 		.4byte	.LVL69
+ 1868 0517 4F0B0000 		.4byte	0xb4f
+ 1869 051b 26050000 		.4byte	0x526
+ 1870 051f 0C       		.uleb128 0xc
+ 1871 0520 01       		.uleb128 0x1
+ 1872 0521 50       		.byte	0x50
+ 1873 0522 02       		.uleb128 0x2
+ 1874 0523 08       		.byte	0x8
+ 1875 0524 30       		.byte	0x30
+ 1876 0525 00       		.byte	0
+ 1877 0526 0B       		.uleb128 0xb
+ 1878 0527 BE030000 		.4byte	.LVL70
+ 1879 052b 4F0B0000 		.4byte	0xb4f
+ 1880 052f 3A050000 		.4byte	0x53a
+ 1881 0533 0C       		.uleb128 0xc
+ 1882 0534 01       		.uleb128 0x1
+ 1883 0535 50       		.byte	0x50
+ 1884 0536 02       		.uleb128 0x2
+ 1885 0537 08       		.byte	0x8
+ 1886 0538 30       		.byte	0x30
+ 1887 0539 00       		.byte	0
+ 1888 053a 0B       		.uleb128 0xb
+ 1889 053b C4030000 		.4byte	.LVL71
+ 1890 053f 4F0B0000 		.4byte	0xb4f
+ 1891 0543 4E050000 		.4byte	0x54e
+ 1892 0547 0C       		.uleb128 0xc
+ 1893 0548 01       		.uleb128 0x1
+ 1894 0549 50       		.byte	0x50
+ 1895 054a 02       		.uleb128 0x2
+ 1896 054b 08       		.byte	0x8
+ 1897 054c 30       		.byte	0x30
+ 1898 054d 00       		.byte	0
+ 1899 054e 07       		.uleb128 0x7
+ 1900 054f CA030000 		.4byte	.LVL72
+ 1901 0553 29010000 		.4byte	0x129
+ 1902 0557 0B       		.uleb128 0xb
+ 1903 0558 D0030000 		.4byte	.LVL73
+ 1904 055c 4F0B0000 		.4byte	0xb4f
+ 1905 0560 6B050000 		.4byte	0x56b
+ 1906 0564 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 39
+
+
+ 1907 0565 01       		.uleb128 0x1
+ 1908 0566 50       		.byte	0x50
+ 1909 0567 02       		.uleb128 0x2
+ 1910 0568 08       		.byte	0x8
+ 1911 0569 3B       		.byte	0x3b
+ 1912 056a 00       		.byte	0
+ 1913 056b 0B       		.uleb128 0xb
+ 1914 056c D6030000 		.4byte	.LVL74
+ 1915 0570 4F0B0000 		.4byte	0xb4f
+ 1916 0574 7E050000 		.4byte	0x57e
+ 1917 0578 0C       		.uleb128 0xc
+ 1918 0579 01       		.uleb128 0x1
+ 1919 057a 50       		.byte	0x50
+ 1920 057b 01       		.uleb128 0x1
+ 1921 057c 3A       		.byte	0x3a
+ 1922 057d 00       		.byte	0
+ 1923 057e 0B       		.uleb128 0xb
+ 1924 057f DC030000 		.4byte	.LVL75
+ 1925 0583 4F0B0000 		.4byte	0xb4f
+ 1926 0587 91050000 		.4byte	0x591
+ 1927 058b 0C       		.uleb128 0xc
+ 1928 058c 01       		.uleb128 0x1
+ 1929 058d 50       		.byte	0x50
+ 1930 058e 01       		.uleb128 0x1
+ 1931 058f 3D       		.byte	0x3d
+ 1932 0590 00       		.byte	0
+ 1933 0591 07       		.uleb128 0x7
+ 1934 0592 EC030000 		.4byte	.LVL76
+ 1935 0596 5A0B0000 		.4byte	0xb5a
+ 1936 059a 07       		.uleb128 0x7
+ 1937 059b FC030000 		.4byte	.LVL77
+ 1938 059f 650B0000 		.4byte	0xb65
+ 1939 05a3 0B       		.uleb128 0xb
+ 1940 05a4 0A040000 		.4byte	.LVL78
+ 1941 05a8 700B0000 		.4byte	0xb70
+ 1942 05ac B6050000 		.4byte	0x5b6
+ 1943 05b0 0C       		.uleb128 0xc
+ 1944 05b1 01       		.uleb128 0x1
+ 1945 05b2 50       		.byte	0x50
+ 1946 05b3 01       		.uleb128 0x1
+ 1947 05b4 31       		.byte	0x31
+ 1948 05b5 00       		.byte	0
+ 1949 05b6 0B       		.uleb128 0xb
+ 1950 05b7 10040000 		.4byte	.LVL79
+ 1951 05bb 7B0B0000 		.4byte	0xb7b
+ 1952 05bf C9050000 		.4byte	0x5c9
+ 1953 05c3 0C       		.uleb128 0xc
+ 1954 05c4 01       		.uleb128 0x1
+ 1955 05c5 50       		.byte	0x50
+ 1956 05c6 01       		.uleb128 0x1
+ 1957 05c7 30       		.byte	0x30
+ 1958 05c8 00       		.byte	0
+ 1959 05c9 0B       		.uleb128 0xb
+ 1960 05ca 18040000 		.4byte	.LVL80
+ 1961 05ce 700B0000 		.4byte	0xb70
+ 1962 05d2 DC050000 		.4byte	0x5dc
+ 1963 05d6 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 40
+
+
+ 1964 05d7 01       		.uleb128 0x1
+ 1965 05d8 50       		.byte	0x50
+ 1966 05d9 01       		.uleb128 0x1
+ 1967 05da 30       		.byte	0x30
+ 1968 05db 00       		.byte	0
+ 1969 05dc 0B       		.uleb128 0xb
+ 1970 05dd 1E040000 		.4byte	.LVL81
+ 1971 05e1 7B0B0000 		.4byte	0xb7b
+ 1972 05e5 EF050000 		.4byte	0x5ef
+ 1973 05e9 0C       		.uleb128 0xc
+ 1974 05ea 01       		.uleb128 0x1
+ 1975 05eb 50       		.byte	0x50
+ 1976 05ec 01       		.uleb128 0x1
+ 1977 05ed 31       		.byte	0x31
+ 1978 05ee 00       		.byte	0
+ 1979 05ef 0B       		.uleb128 0xb
+ 1980 05f0 2C040000 		.4byte	.LVL82
+ 1981 05f4 860B0000 		.4byte	0xb86
+ 1982 05f8 02060000 		.4byte	0x602
+ 1983 05fc 0C       		.uleb128 0xc
+ 1984 05fd 01       		.uleb128 0x1
+ 1985 05fe 50       		.byte	0x50
+ 1986 05ff 01       		.uleb128 0x1
+ 1987 0600 31       		.byte	0x31
+ 1988 0601 00       		.byte	0
+ 1989 0602 0B       		.uleb128 0xb
+ 1990 0603 32040000 		.4byte	.LVL83
+ 1991 0607 910B0000 		.4byte	0xb91
+ 1992 060b 15060000 		.4byte	0x615
+ 1993 060f 0C       		.uleb128 0xc
+ 1994 0610 01       		.uleb128 0x1
+ 1995 0611 50       		.byte	0x50
+ 1996 0612 01       		.uleb128 0x1
+ 1997 0613 30       		.byte	0x30
+ 1998 0614 00       		.byte	0
+ 1999 0615 0B       		.uleb128 0xb
+ 2000 0616 3A040000 		.4byte	.LVL84
+ 2001 061a 860B0000 		.4byte	0xb86
+ 2002 061e 28060000 		.4byte	0x628
+ 2003 0622 0C       		.uleb128 0xc
+ 2004 0623 01       		.uleb128 0x1
+ 2005 0624 50       		.byte	0x50
+ 2006 0625 01       		.uleb128 0x1
+ 2007 0626 30       		.byte	0x30
+ 2008 0627 00       		.byte	0
+ 2009 0628 0B       		.uleb128 0xb
+ 2010 0629 40040000 		.4byte	.LVL85
+ 2011 062d 910B0000 		.4byte	0xb91
+ 2012 0631 3B060000 		.4byte	0x63b
+ 2013 0635 0C       		.uleb128 0xc
+ 2014 0636 01       		.uleb128 0x1
+ 2015 0637 50       		.byte	0x50
+ 2016 0638 01       		.uleb128 0x1
+ 2017 0639 31       		.byte	0x31
+ 2018 063a 00       		.byte	0
+ 2019 063b 07       		.uleb128 0x7
+ 2020 063c 50040000 		.4byte	.LVL86
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 41
+
+
+ 2021 0640 5A0B0000 		.4byte	0xb5a
+ 2022 0644 07       		.uleb128 0x7
+ 2023 0645 60040000 		.4byte	.LVL87
+ 2024 0649 650B0000 		.4byte	0xb65
+ 2025 064d 00       		.byte	0
+ 2026 064e 11       		.uleb128 0x11
+ 2027 064f 75030000 		.4byte	.LASF22
+ 2028 0653 04       		.byte	0x4
+ 2029 0654 1207     		.2byte	0x712
+ 2030 0656 5A060000 		.4byte	0x65a
+ 2031 065a 12       		.uleb128 0x12
+ 2032 065b 76000000 		.4byte	0x76
+ 2033 065f 0E       		.uleb128 0xe
+ 2034 0660 8F000000 		.4byte	0x8f
+ 2035 0664 6F060000 		.4byte	0x66f
+ 2036 0668 0F       		.uleb128 0xf
+ 2037 0669 9D000000 		.4byte	0x9d
+ 2038 066d 09       		.byte	0x9
+ 2039 066e 00       		.byte	0
+ 2040 066f 13       		.uleb128 0x13
+ 2041 0670 A6000000 		.4byte	.LASF23
+ 2042 0674 01       		.byte	0x1
+ 2043 0675 10       		.byte	0x10
+ 2044 0676 5F060000 		.4byte	0x65f
+ 2045 067a 05       		.uleb128 0x5
+ 2046 067b 03       		.byte	0x3
+ 2047 067c 00000000 		.4byte	datorecibido
+ 2048 0680 13       		.uleb128 0x13
+ 2049 0681 06000000 		.4byte	.LASF24
+ 2050 0685 01       		.byte	0x1
+ 2051 0686 11       		.byte	0x11
+ 2052 0687 68000000 		.4byte	0x68
+ 2053 068b 05       		.uleb128 0x5
+ 2054 068c 03       		.byte	0x3
+ 2055 068d 00000000 		.4byte	counta
+ 2056 0691 13       		.uleb128 0x13
+ 2057 0692 0D000000 		.4byte	.LASF25
+ 2058 0696 01       		.byte	0x1
+ 2059 0697 11       		.byte	0x11
+ 2060 0698 68000000 		.4byte	0x68
+ 2061 069c 05       		.uleb128 0x5
+ 2062 069d 03       		.byte	0x3
+ 2063 069e 00000000 		.4byte	countb
+ 2064 06a2 13       		.uleb128 0x13
+ 2065 06a3 B6010000 		.4byte	.LASF26
+ 2066 06a7 01       		.byte	0x1
+ 2067 06a8 11       		.byte	0x11
+ 2068 06a9 68000000 		.4byte	0x68
+ 2069 06ad 05       		.uleb128 0x5
+ 2070 06ae 03       		.byte	0x3
+ 2071 06af 00000000 		.4byte	pwmx
+ 2072 06b3 13       		.uleb128 0x13
+ 2073 06b4 BB010000 		.4byte	.LASF27
+ 2074 06b8 01       		.byte	0x1
+ 2075 06b9 11       		.byte	0x11
+ 2076 06ba 68000000 		.4byte	0x68
+ 2077 06be 05       		.uleb128 0x5
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 42
+
+
+ 2078 06bf 03       		.byte	0x3
+ 2079 06c0 00000000 		.4byte	pwmy
+ 2080 06c4 14       		.uleb128 0x14
+ 2081 06c5 6900     		.ascii	"i\000"
+ 2082 06c7 01       		.byte	0x1
+ 2083 06c8 11       		.byte	0x11
+ 2084 06c9 68000000 		.4byte	0x68
+ 2085 06cd 05       		.uleb128 0x5
+ 2086 06ce 03       		.byte	0x3
+ 2087 06cf 00000000 		.4byte	i
+ 2088 06d3 14       		.uleb128 0x14
+ 2089 06d4 7800     		.ascii	"x\000"
+ 2090 06d6 01       		.byte	0x1
+ 2091 06d7 11       		.byte	0x11
+ 2092 06d8 68000000 		.4byte	0x68
+ 2093 06dc 05       		.uleb128 0x5
+ 2094 06dd 03       		.byte	0x3
+ 2095 06de 00000000 		.4byte	x
+ 2096 06e2 14       		.uleb128 0x14
+ 2097 06e3 4D585600 		.ascii	"MXV\000"
+ 2098 06e7 01       		.byte	0x1
+ 2099 06e8 11       		.byte	0x11
+ 2100 06e9 68000000 		.4byte	0x68
+ 2101 06ed 05       		.uleb128 0x5
+ 2102 06ee 03       		.byte	0x3
+ 2103 06ef 00000000 		.4byte	MXV
+ 2104 06f3 14       		.uleb128 0x14
+ 2105 06f4 4D595600 		.ascii	"MYV\000"
+ 2106 06f8 01       		.byte	0x1
+ 2107 06f9 11       		.byte	0x11
+ 2108 06fa 68000000 		.4byte	0x68
+ 2109 06fe 05       		.uleb128 0x5
+ 2110 06ff 03       		.byte	0x3
+ 2111 0700 00000000 		.4byte	MYV
+ 2112 0704 13       		.uleb128 0x13
+ 2113 0705 64010000 		.4byte	.LASF28
+ 2114 0709 01       		.byte	0x1
+ 2115 070a 11       		.byte	0x11
+ 2116 070b 68000000 		.4byte	0x68
+ 2117 070f 05       		.uleb128 0x5
+ 2118 0710 03       		.byte	0x3
+ 2119 0711 00000000 		.4byte	MXV0
+ 2120 0715 13       		.uleb128 0x13
+ 2121 0716 51000000 		.4byte	.LASF29
+ 2122 071a 01       		.byte	0x1
+ 2123 071b 11       		.byte	0x11
+ 2124 071c 68000000 		.4byte	0x68
+ 2125 0720 05       		.uleb128 0x5
+ 2126 0721 03       		.byte	0x3
+ 2127 0722 00000000 		.4byte	MYV0
+ 2128 0726 13       		.uleb128 0x13
+ 2129 0727 17030000 		.4byte	.LASF30
+ 2130 072b 01       		.byte	0x1
+ 2131 072c 11       		.byte	0x11
+ 2132 072d 68000000 		.4byte	0x68
+ 2133 0731 05       		.uleb128 0x5
+ 2134 0732 03       		.byte	0x3
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 43
+
+
+ 2135 0733 00000000 		.4byte	MXV00
+ 2136 0737 13       		.uleb128 0x13
+ 2137 0738 00000000 		.4byte	.LASF31
+ 2138 073c 01       		.byte	0x1
+ 2139 073d 11       		.byte	0x11
+ 2140 073e 68000000 		.4byte	0x68
+ 2141 0742 05       		.uleb128 0x5
+ 2142 0743 03       		.byte	0x3
+ 2143 0744 00000000 		.4byte	MYV00
+ 2144 0748 13       		.uleb128 0x13
+ 2145 0749 99010000 		.4byte	.LASF32
+ 2146 074d 01       		.byte	0x1
+ 2147 074e 11       		.byte	0x11
+ 2148 074f 68000000 		.4byte	0x68
+ 2149 0753 05       		.uleb128 0x5
+ 2150 0754 03       		.byte	0x3
+ 2151 0755 00000000 		.4byte	retx
+ 2152 0759 13       		.uleb128 0x13
+ 2153 075a 9E010000 		.4byte	.LASF33
+ 2154 075e 01       		.byte	0x1
+ 2155 075f 11       		.byte	0x11
+ 2156 0760 68000000 		.4byte	0x68
+ 2157 0764 05       		.uleb128 0x5
+ 2158 0765 03       		.byte	0x3
+ 2159 0766 00000000 		.4byte	rety
+ 2160 076a 14       		.uleb128 0x14
+ 2161 076b 4B505800 		.ascii	"KPX\000"
+ 2162 076f 01       		.byte	0x1
+ 2163 0770 12       		.byte	0x12
+ 2164 0771 68000000 		.4byte	0x68
+ 2165 0775 05       		.uleb128 0x5
+ 2166 0776 03       		.byte	0x3
+ 2167 0777 00000000 		.4byte	KPX
+ 2168 077b 14       		.uleb128 0x14
+ 2169 077c 4B495800 		.ascii	"KIX\000"
+ 2170 0780 01       		.byte	0x1
+ 2171 0781 12       		.byte	0x12
+ 2172 0782 68000000 		.4byte	0x68
+ 2173 0786 05       		.uleb128 0x5
+ 2174 0787 03       		.byte	0x3
+ 2175 0788 00000000 		.4byte	KIX
+ 2176 078c 13       		.uleb128 0x13
+ 2177 078d A1000000 		.4byte	.LASF34
+ 2178 0791 01       		.byte	0x1
+ 2179 0792 12       		.byte	0x12
+ 2180 0793 68000000 		.4byte	0x68
+ 2181 0797 05       		.uleb128 0x5
+ 2182 0798 03       		.byte	0x3
+ 2183 0799 00000000 		.4byte	rfaa
+ 2184 079d 14       		.uleb128 0x14
+ 2185 079e 72666100 		.ascii	"rfa\000"
+ 2186 07a2 01       		.byte	0x1
+ 2187 07a3 12       		.byte	0x12
+ 2188 07a4 68000000 		.4byte	0x68
+ 2189 07a8 05       		.uleb128 0x5
+ 2190 07a9 03       		.byte	0x3
+ 2191 07aa 00000000 		.4byte	rfa
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 44
+
+
+ 2192 07ae 14       		.uleb128 0x14
+ 2193 07af 72616100 		.ascii	"raa\000"
+ 2194 07b3 01       		.byte	0x1
+ 2195 07b4 12       		.byte	0x12
+ 2196 07b5 68000000 		.4byte	0x68
+ 2197 07b9 05       		.uleb128 0x5
+ 2198 07ba 03       		.byte	0x3
+ 2199 07bb 00000000 		.4byte	raa
+ 2200 07bf 14       		.uleb128 0x14
+ 2201 07c0 726600   		.ascii	"rf\000"
+ 2202 07c3 01       		.byte	0x1
+ 2203 07c4 12       		.byte	0x12
+ 2204 07c5 68000000 		.4byte	0x68
+ 2205 07c9 05       		.uleb128 0x5
+ 2206 07ca 03       		.byte	0x3
+ 2207 07cb 00000000 		.4byte	rf
+ 2208 07cf 14       		.uleb128 0x14
+ 2209 07d0 78787800 		.ascii	"xxx\000"
+ 2210 07d4 01       		.byte	0x1
+ 2211 07d5 12       		.byte	0x12
+ 2212 07d6 68000000 		.4byte	0x68
+ 2213 07da 05       		.uleb128 0x5
+ 2214 07db 03       		.byte	0x3
+ 2215 07dc 00000000 		.4byte	xxx
+ 2216 07e0 14       		.uleb128 0x14
+ 2217 07e1 73737800 		.ascii	"ssx\000"
+ 2218 07e5 01       		.byte	0x1
+ 2219 07e6 13       		.byte	0x13
+ 2220 07e7 88000000 		.4byte	0x88
+ 2221 07eb 05       		.uleb128 0x5
+ 2222 07ec 03       		.byte	0x3
+ 2223 07ed 00000000 		.4byte	ssx
+ 2224 07f1 13       		.uleb128 0x13
+ 2225 07f2 14000000 		.4byte	.LASF35
+ 2226 07f6 01       		.byte	0x1
+ 2227 07f7 13       		.byte	0x13
+ 2228 07f8 88000000 		.4byte	0x88
+ 2229 07fc 05       		.uleb128 0x5
+ 2230 07fd 03       		.byte	0x3
+ 2231 07fe 00000000 		.4byte	ssax
+ 2232 0802 13       		.uleb128 0x13
+ 2233 0803 F1020000 		.4byte	.LASF36
+ 2234 0807 01       		.byte	0x1
+ 2235 0808 13       		.byte	0x13
+ 2236 0809 88000000 		.4byte	0x88
+ 2237 080d 05       		.uleb128 0x5
+ 2238 080e 03       		.byte	0x3
+ 2239 080f 00000000 		.4byte	ssaax
+ 2240 0813 14       		.uleb128 0x14
+ 2241 0814 73657800 		.ascii	"sex\000"
+ 2242 0818 01       		.byte	0x1
+ 2243 0819 13       		.byte	0x13
+ 2244 081a 88000000 		.4byte	0x88
+ 2245 081e 05       		.uleb128 0x5
+ 2246 081f 03       		.byte	0x3
+ 2247 0820 00000000 		.4byte	sex
+ 2248 0824 13       		.uleb128 0x13
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 45
+
+
+ 2249 0825 8A020000 		.4byte	.LASF37
+ 2250 0829 01       		.byte	0x1
+ 2251 082a 13       		.byte	0x13
+ 2252 082b 88000000 		.4byte	0x88
+ 2253 082f 05       		.uleb128 0x5
+ 2254 0830 03       		.byte	0x3
+ 2255 0831 00000000 		.4byte	seax
+ 2256 0835 13       		.uleb128 0x13
+ 2257 0836 5E010000 		.4byte	.LASF38
+ 2258 083a 01       		.byte	0x1
+ 2259 083b 13       		.byte	0x13
+ 2260 083c 88000000 		.4byte	0x88
+ 2261 0840 05       		.uleb128 0x5
+ 2262 0841 03       		.byte	0x3
+ 2263 0842 00000000 		.4byte	seaax
+ 2264 0846 13       		.uleb128 0x13
+ 2265 0847 6F030000 		.4byte	.LASF39
+ 2266 084b 01       		.byte	0x1
+ 2267 084c 13       		.byte	0x13
+ 2268 084d 88000000 		.4byte	0x88
+ 2269 0851 05       		.uleb128 0x5
+ 2270 0852 03       		.byte	0x3
+ 2271 0853 00000000 		.4byte	refsx
+ 2272 0857 13       		.uleb128 0x13
+ 2273 0858 10040000 		.4byte	.LASF40
+ 2274 085c 01       		.byte	0x1
+ 2275 085d 13       		.byte	0x13
+ 2276 085e 88000000 		.4byte	0x88
+ 2277 0862 05       		.uleb128 0x5
+ 2278 0863 03       		.byte	0x3
+ 2279 0864 00000000 		.4byte	refsax
+ 2280 0868 13       		.uleb128 0x13
+ 2281 0869 07030000 		.4byte	.LASF41
+ 2282 086d 01       		.byte	0x1
+ 2283 086e 13       		.byte	0x13
+ 2284 086f 88000000 		.4byte	0x88
+ 2285 0873 05       		.uleb128 0x5
+ 2286 0874 03       		.byte	0x3
+ 2287 0875 00000000 		.4byte	refsaax
+ 2288 0879 13       		.uleb128 0x13
+ 2289 087a 23010000 		.4byte	.LASF42
+ 2290 087e 01       		.byte	0x1
+ 2291 087f 13       		.byte	0x13
+ 2292 0880 88000000 		.4byte	0x88
+ 2293 0884 05       		.uleb128 0x5
+ 2294 0885 03       		.byte	0x3
+ 2295 0886 00000000 		.4byte	refex
+ 2296 088a 13       		.uleb128 0x13
+ 2297 088b 08020000 		.4byte	.LASF43
+ 2298 088f 01       		.byte	0x1
+ 2299 0890 13       		.byte	0x13
+ 2300 0891 88000000 		.4byte	0x88
+ 2301 0895 05       		.uleb128 0x5
+ 2302 0896 03       		.byte	0x3
+ 2303 0897 00000000 		.4byte	refeax
+ 2304 089b 13       		.uleb128 0x13
+ 2305 089c F4000000 		.4byte	.LASF44
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 46
+
+
+ 2306 08a0 01       		.byte	0x1
+ 2307 08a1 13       		.byte	0x13
+ 2308 08a2 88000000 		.4byte	0x88
+ 2309 08a6 05       		.uleb128 0x5
+ 2310 08a7 03       		.byte	0x3
+ 2311 08a8 00000000 		.4byte	refeaax
+ 2312 08ac 13       		.uleb128 0x13
+ 2313 08ad 81010000 		.4byte	.LASF45
+ 2314 08b1 01       		.byte	0x1
+ 2315 08b2 14       		.byte	0x14
+ 2316 08b3 88000000 		.4byte	0x88
+ 2317 08b7 05       		.uleb128 0x5
+ 2318 08b8 03       		.byte	0x3
+ 2319 08b9 00000000 		.4byte	retsx
+ 2320 08bd 13       		.uleb128 0x13
+ 2321 08be 24020000 		.4byte	.LASF46
+ 2322 08c2 01       		.byte	0x1
+ 2323 08c3 14       		.byte	0x14
+ 2324 08c4 88000000 		.4byte	0x88
+ 2325 08c8 05       		.uleb128 0x5
+ 2326 08c9 03       		.byte	0x3
+ 2327 08ca 00000000 		.4byte	retsax
+ 2328 08ce 13       		.uleb128 0x13
+ 2329 08cf D5020000 		.4byte	.LASF47
+ 2330 08d3 01       		.byte	0x1
+ 2331 08d4 14       		.byte	0x14
+ 2332 08d5 88000000 		.4byte	0x88
+ 2333 08d9 05       		.uleb128 0x5
+ 2334 08da 03       		.byte	0x3
+ 2335 08db 00000000 		.4byte	retsaax
+ 2336 08df 13       		.uleb128 0x13
+ 2337 08e0 A2020000 		.4byte	.LASF48
+ 2338 08e4 01       		.byte	0x1
+ 2339 08e5 14       		.byte	0x14
+ 2340 08e6 88000000 		.4byte	0x88
+ 2341 08ea 05       		.uleb128 0x5
+ 2342 08eb 03       		.byte	0x3
+ 2343 08ec 00000000 		.4byte	retex
+ 2344 08f0 13       		.uleb128 0x13
+ 2345 08f1 29030000 		.4byte	.LASF49
+ 2346 08f5 01       		.byte	0x1
+ 2347 08f6 14       		.byte	0x14
+ 2348 08f7 88000000 		.4byte	0x88
+ 2349 08fb 05       		.uleb128 0x5
+ 2350 08fc 03       		.byte	0x3
+ 2351 08fd 00000000 		.4byte	reteax
+ 2352 0901 13       		.uleb128 0x13
+ 2353 0902 76000000 		.4byte	.LASF50
+ 2354 0906 01       		.byte	0x1
+ 2355 0907 14       		.byte	0x14
+ 2356 0908 88000000 		.4byte	0x88
+ 2357 090c 05       		.uleb128 0x5
+ 2358 090d 03       		.byte	0x3
+ 2359 090e 00000000 		.4byte	reteaax
+ 2360 0912 14       		.uleb128 0x14
+ 2361 0913 73737900 		.ascii	"ssy\000"
+ 2362 0917 01       		.byte	0x1
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 47
+
+
+ 2363 0918 15       		.byte	0x15
+ 2364 0919 88000000 		.4byte	0x88
+ 2365 091d 05       		.uleb128 0x5
+ 2366 091e 03       		.byte	0x3
+ 2367 091f 00000000 		.4byte	ssy
+ 2368 0923 13       		.uleb128 0x13
+ 2369 0924 19000000 		.4byte	.LASF51
+ 2370 0928 01       		.byte	0x1
+ 2371 0929 15       		.byte	0x15
+ 2372 092a 88000000 		.4byte	0x88
+ 2373 092e 05       		.uleb128 0x5
+ 2374 092f 03       		.byte	0x3
+ 2375 0930 00000000 		.4byte	ssay
+ 2376 0934 13       		.uleb128 0x13
+ 2377 0935 F7020000 		.4byte	.LASF52
+ 2378 0939 01       		.byte	0x1
+ 2379 093a 15       		.byte	0x15
+ 2380 093b 88000000 		.4byte	0x88
+ 2381 093f 05       		.uleb128 0x5
+ 2382 0940 03       		.byte	0x3
+ 2383 0941 00000000 		.4byte	ssaay
+ 2384 0945 14       		.uleb128 0x14
+ 2385 0946 73657900 		.ascii	"sey\000"
+ 2386 094a 01       		.byte	0x1
+ 2387 094b 15       		.byte	0x15
+ 2388 094c 88000000 		.4byte	0x88
+ 2389 0950 05       		.uleb128 0x5
+ 2390 0951 03       		.byte	0x3
+ 2391 0952 00000000 		.4byte	sey
+ 2392 0956 13       		.uleb128 0x13
+ 2393 0957 1E040000 		.4byte	.LASF53
+ 2394 095b 01       		.byte	0x1
+ 2395 095c 15       		.byte	0x15
+ 2396 095d 88000000 		.4byte	0x88
+ 2397 0961 05       		.uleb128 0x5
+ 2398 0962 03       		.byte	0x3
+ 2399 0963 00000000 		.4byte	seay
+ 2400 0967 13       		.uleb128 0x13
+ 2401 0968 69010000 		.4byte	.LASF54
+ 2402 096c 01       		.byte	0x1
+ 2403 096d 15       		.byte	0x15
+ 2404 096e 88000000 		.4byte	0x88
+ 2405 0972 05       		.uleb128 0x5
+ 2406 0973 03       		.byte	0x3
+ 2407 0974 00000000 		.4byte	seaay
+ 2408 0978 13       		.uleb128 0x13
+ 2409 0979 35000000 		.4byte	.LASF55
+ 2410 097d 01       		.byte	0x1
+ 2411 097e 15       		.byte	0x15
+ 2412 097f 88000000 		.4byte	0x88
+ 2413 0983 05       		.uleb128 0x5
+ 2414 0984 03       		.byte	0x3
+ 2415 0985 00000000 		.4byte	refsy
+ 2416 0989 13       		.uleb128 0x13
+ 2417 098a 17040000 		.4byte	.LASF56
+ 2418 098e 01       		.byte	0x1
+ 2419 098f 15       		.byte	0x15
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 48
+
+
+ 2420 0990 88000000 		.4byte	0x88
+ 2421 0994 05       		.uleb128 0x5
+ 2422 0995 03       		.byte	0x3
+ 2423 0996 00000000 		.4byte	refsay
+ 2424 099a 13       		.uleb128 0x13
+ 2425 099b 0F030000 		.4byte	.LASF57
+ 2426 099f 01       		.byte	0x1
+ 2427 09a0 15       		.byte	0x15
+ 2428 09a1 88000000 		.4byte	0x88
+ 2429 09a5 05       		.uleb128 0x5
+ 2430 09a6 03       		.byte	0x3
+ 2431 09a7 00000000 		.4byte	refsaay
+ 2432 09ab 13       		.uleb128 0x13
+ 2433 09ac 4E020000 		.4byte	.LASF58
+ 2434 09b0 01       		.byte	0x1
+ 2435 09b1 15       		.byte	0x15
+ 2436 09b2 88000000 		.4byte	0x88
+ 2437 09b6 05       		.uleb128 0x5
+ 2438 09b7 03       		.byte	0x3
+ 2439 09b8 00000000 		.4byte	refey
+ 2440 09bc 13       		.uleb128 0x13
+ 2441 09bd 1D020000 		.4byte	.LASF59
+ 2442 09c1 01       		.byte	0x1
+ 2443 09c2 15       		.byte	0x15
+ 2444 09c3 88000000 		.4byte	0x88
+ 2445 09c7 05       		.uleb128 0x5
+ 2446 09c8 03       		.byte	0x3
+ 2447 09c9 00000000 		.4byte	refeay
+ 2448 09cd 13       		.uleb128 0x13
+ 2449 09ce FC000000 		.4byte	.LASF60
+ 2450 09d2 01       		.byte	0x1
+ 2451 09d3 15       		.byte	0x15
+ 2452 09d4 88000000 		.4byte	0x88
+ 2453 09d8 05       		.uleb128 0x5
+ 2454 09d9 03       		.byte	0x3
+ 2455 09da 00000000 		.4byte	refeaay
+ 2456 09de 13       		.uleb128 0x13
+ 2457 09df 87010000 		.4byte	.LASF61
+ 2458 09e3 01       		.byte	0x1
+ 2459 09e4 16       		.byte	0x16
+ 2460 09e5 88000000 		.4byte	0x88
+ 2461 09e9 05       		.uleb128 0x5
+ 2462 09ea 03       		.byte	0x3
+ 2463 09eb 00000000 		.4byte	retsy
+ 2464 09ef 13       		.uleb128 0x13
+ 2465 09f0 2B020000 		.4byte	.LASF62
+ 2466 09f4 01       		.byte	0x1
+ 2467 09f5 16       		.byte	0x16
+ 2468 09f6 88000000 		.4byte	0x88
+ 2469 09fa 05       		.uleb128 0x5
+ 2470 09fb 03       		.byte	0x3
+ 2471 09fc 00000000 		.4byte	retsay
+ 2472 0a00 13       		.uleb128 0x13
+ 2473 0a01 DD020000 		.4byte	.LASF63
+ 2474 0a05 01       		.byte	0x1
+ 2475 0a06 16       		.byte	0x16
+ 2476 0a07 88000000 		.4byte	0x88
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 49
+
+
+ 2477 0a0b 05       		.uleb128 0x5
+ 2478 0a0c 03       		.byte	0x3
+ 2479 0a0d 00000000 		.4byte	retsaay
+ 2480 0a11 13       		.uleb128 0x13
+ 2481 0a12 A8020000 		.4byte	.LASF64
+ 2482 0a16 01       		.byte	0x1
+ 2483 0a17 16       		.byte	0x16
+ 2484 0a18 88000000 		.4byte	0x88
+ 2485 0a1c 05       		.uleb128 0x5
+ 2486 0a1d 03       		.byte	0x3
+ 2487 0a1e 00000000 		.4byte	retey
+ 2488 0a22 13       		.uleb128 0x13
+ 2489 0a23 CE020000 		.4byte	.LASF65
+ 2490 0a27 01       		.byte	0x1
+ 2491 0a28 16       		.byte	0x16
+ 2492 0a29 88000000 		.4byte	0x88
+ 2493 0a2d 05       		.uleb128 0x5
+ 2494 0a2e 03       		.byte	0x3
+ 2495 0a2f 00000000 		.4byte	reteay
+ 2496 0a33 13       		.uleb128 0x13
+ 2497 0a34 7E000000 		.4byte	.LASF66
+ 2498 0a38 01       		.byte	0x1
+ 2499 0a39 16       		.byte	0x16
+ 2500 0a3a 88000000 		.4byte	0x88
+ 2501 0a3e 05       		.uleb128 0x5
+ 2502 0a3f 03       		.byte	0x3
+ 2503 0a40 00000000 		.4byte	reteaay
+ 2504 0a44 0E       		.uleb128 0xe
+ 2505 0a45 8F000000 		.4byte	0x8f
+ 2506 0a49 540A0000 		.4byte	0xa54
+ 2507 0a4d 0F       		.uleb128 0xf
+ 2508 0a4e 9D000000 		.4byte	0x9d
+ 2509 0a52 13       		.byte	0x13
+ 2510 0a53 00       		.byte	0
+ 2511 0a54 13       		.uleb128 0x13
+ 2512 0a55 E5020000 		.4byte	.LASF67
+ 2513 0a59 01       		.byte	0x1
+ 2514 0a5a 17       		.byte	0x17
+ 2515 0a5b 440A0000 		.4byte	0xa44
+ 2516 0a5f 05       		.uleb128 0x5
+ 2517 0a60 03       		.byte	0x3
+ 2518 0a61 00000000 		.4byte	datoenviado
+ 2519 0a65 0E       		.uleb128 0xe
+ 2520 0a66 8F000000 		.4byte	0x8f
+ 2521 0a6a 750A0000 		.4byte	0xa75
+ 2522 0a6e 0F       		.uleb128 0xf
+ 2523 0a6f 9D000000 		.4byte	0x9d
+ 2524 0a73 01       		.byte	0x1
+ 2525 0a74 00       		.byte	0
+ 2526 0a75 14       		.uleb128 0x14
+ 2527 0a76 4D5800   		.ascii	"MX\000"
+ 2528 0a79 01       		.byte	0x1
+ 2529 0a7a 18       		.byte	0x18
+ 2530 0a7b 650A0000 		.4byte	0xa65
+ 2531 0a7f 05       		.uleb128 0x5
+ 2532 0a80 03       		.byte	0x3
+ 2533 0a81 00000000 		.4byte	MX
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 50
+
+
+ 2534 0a85 14       		.uleb128 0x14
+ 2535 0a86 4D5900   		.ascii	"MY\000"
+ 2536 0a89 01       		.byte	0x1
+ 2537 0a8a 18       		.byte	0x18
+ 2538 0a8b 650A0000 		.4byte	0xa65
+ 2539 0a8f 05       		.uleb128 0x5
+ 2540 0a90 03       		.byte	0x3
+ 2541 0a91 00000000 		.4byte	MY
+ 2542 0a95 14       		.uleb128 0x14
+ 2543 0a96 445800   		.ascii	"DX\000"
+ 2544 0a99 01       		.byte	0x1
+ 2545 0a9a 18       		.byte	0x18
+ 2546 0a9b 8F000000 		.4byte	0x8f
+ 2547 0a9f 05       		.uleb128 0x5
+ 2548 0aa0 03       		.byte	0x3
+ 2549 0aa1 00000000 		.4byte	DX
+ 2550 0aa5 14       		.uleb128 0x14
+ 2551 0aa6 445900   		.ascii	"DY\000"
+ 2552 0aa9 01       		.byte	0x1
+ 2553 0aaa 18       		.byte	0x18
+ 2554 0aab 8F000000 		.4byte	0x8f
+ 2555 0aaf 05       		.uleb128 0x5
+ 2556 0ab0 03       		.byte	0x3
+ 2557 0ab1 00000000 		.4byte	DY
+ 2558 0ab5 15       		.uleb128 0x15
+ 2559 0ab6 B3000000 		.4byte	.LASF68
+ 2560 0aba B3000000 		.4byte	.LASF68
+ 2561 0abe 05       		.byte	0x5
+ 2562 0abf 71       		.byte	0x71
+ 2563 0ac0 15       		.uleb128 0x15
+ 2564 0ac1 EB010000 		.4byte	.LASF69
+ 2565 0ac5 EB010000 		.4byte	.LASF69
+ 2566 0ac9 06       		.byte	0x6
+ 2567 0aca CB       		.byte	0xcb
+ 2568 0acb 15       		.uleb128 0x15
+ 2569 0acc C0000000 		.4byte	.LASF70
+ 2570 0ad0 C0000000 		.4byte	.LASF70
+ 2571 0ad4 05       		.byte	0x5
+ 2572 0ad5 8B       		.byte	0x8b
+ 2573 0ad6 15       		.uleb128 0x15
+ 2574 0ad7 73020000 		.4byte	.LASF71
+ 2575 0adb 73020000 		.4byte	.LASF71
+ 2576 0adf 05       		.byte	0x5
+ 2577 0ae0 54       		.byte	0x54
+ 2578 0ae1 15       		.uleb128 0x15
+ 2579 0ae2 FD020000 		.4byte	.LASF72
+ 2580 0ae6 FD020000 		.4byte	.LASF72
+ 2581 0aea 07       		.byte	0x7
+ 2582 0aeb 92       		.byte	0x92
+ 2583 0aec 15       		.uleb128 0x15
+ 2584 0aed 93000000 		.4byte	.LASF73
+ 2585 0af1 93000000 		.4byte	.LASF73
+ 2586 0af5 08       		.byte	0x8
+ 2587 0af6 27       		.byte	0x27
+ 2588 0af7 15       		.uleb128 0x15
+ 2589 0af8 DD000000 		.4byte	.LASF74
+ 2590 0afc DD000000 		.4byte	.LASF74
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 51
+
+
+ 2591 0b00 09       		.byte	0x9
+ 2592 0b01 18       		.byte	0x18
+ 2593 0b02 15       		.uleb128 0x15
+ 2594 0b03 CF000000 		.4byte	.LASF75
+ 2595 0b07 CF000000 		.4byte	.LASF75
+ 2596 0b0b 0A       		.byte	0xa
+ 2597 0b0c 18       		.byte	0x18
+ 2598 0b0d 15       		.uleb128 0x15
+ 2599 0b0e 27000000 		.4byte	.LASF76
+ 2600 0b12 27000000 		.4byte	.LASF76
+ 2601 0b16 0B       		.byte	0xb
+ 2602 0b17 18       		.byte	0x18
+ 2603 0b18 15       		.uleb128 0x15
+ 2604 0b19 54020000 		.4byte	.LASF77
+ 2605 0b1d 54020000 		.4byte	.LASF77
+ 2606 0b21 0C       		.byte	0xc
+ 2607 0b22 18       		.byte	0x18
+ 2608 0b23 15       		.uleb128 0x15
+ 2609 0b24 0F020000 		.4byte	.LASF78
+ 2610 0b28 0F020000 		.4byte	.LASF78
+ 2611 0b2c 0D       		.byte	0xd
+ 2612 0b2d 18       		.byte	0x18
+ 2613 0b2e 15       		.uleb128 0x15
+ 2614 0b2f 5F000000 		.4byte	.LASF79
+ 2615 0b33 5F000000 		.4byte	.LASF79
+ 2616 0b37 0E       		.byte	0xe
+ 2617 0b38 18       		.byte	0x18
+ 2618 0b39 15       		.uleb128 0x15
+ 2619 0b3a 86000000 		.4byte	.LASF80
+ 2620 0b3e 86000000 		.4byte	.LASF80
+ 2621 0b42 0F       		.byte	0xf
+ 2622 0b43 18       		.byte	0x18
+ 2623 0b44 15       		.uleb128 0x15
+ 2624 0b45 A3010000 		.4byte	.LASF81
+ 2625 0b49 A3010000 		.4byte	.LASF81
+ 2626 0b4d 06       		.byte	0x6
+ 2627 0b4e 4D       		.byte	0x4d
+ 2628 0b4f 15       		.uleb128 0x15
+ 2629 0b50 23040000 		.4byte	.LASF82
+ 2630 0b54 23040000 		.4byte	.LASF82
+ 2631 0b58 05       		.byte	0x5
+ 2632 0b59 8A       		.byte	0x8a
+ 2633 0b5a 15       		.uleb128 0x15
+ 2634 0b5b 29010000 		.4byte	.LASF83
+ 2635 0b5f 29010000 		.4byte	.LASF83
+ 2636 0b63 07       		.byte	0x7
+ 2637 0b64 C7       		.byte	0xc7
+ 2638 0b65 15       		.uleb128 0x15
+ 2639 0b66 6F010000 		.4byte	.LASF84
+ 2640 0b6a 6F010000 		.4byte	.LASF84
+ 2641 0b6e 07       		.byte	0x7
+ 2642 0b6f CA       		.byte	0xca
+ 2643 0b70 15       		.uleb128 0x15
+ 2644 0b71 99020000 		.4byte	.LASF85
+ 2645 0b75 99020000 		.4byte	.LASF85
+ 2646 0b79 10       		.byte	0x10
+ 2647 0b7a 26       		.byte	0x26
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 52
+
+
+ 2648 0b7b 15       		.uleb128 0x15
+ 2649 0b7c 1E000000 		.4byte	.LASF86
+ 2650 0b80 1E000000 		.4byte	.LASF86
+ 2651 0b84 11       		.byte	0x11
+ 2652 0b85 26       		.byte	0x26
+ 2653 0b86 15       		.uleb128 0x15
+ 2654 0b87 EB000000 		.4byte	.LASF87
+ 2655 0b8b EB000000 		.4byte	.LASF87
+ 2656 0b8f 12       		.byte	0x12
+ 2657 0b90 26       		.byte	0x26
+ 2658 0b91 15       		.uleb128 0x15
+ 2659 0b92 32020000 		.4byte	.LASF88
+ 2660 0b96 32020000 		.4byte	.LASF88
+ 2661 0b9a 13       		.byte	0x13
+ 2662 0b9b 26       		.byte	0x26
+ 2663 0b9c 00       		.byte	0
+ 2664              		.section	.debug_abbrev,"",%progbits
+ 2665              	.Ldebug_abbrev0:
+ 2666 0000 01       		.uleb128 0x1
+ 2667 0001 11       		.uleb128 0x11
+ 2668 0002 01       		.byte	0x1
+ 2669 0003 25       		.uleb128 0x25
+ 2670 0004 0E       		.uleb128 0xe
+ 2671 0005 13       		.uleb128 0x13
+ 2672 0006 0B       		.uleb128 0xb
+ 2673 0007 03       		.uleb128 0x3
+ 2674 0008 0E       		.uleb128 0xe
+ 2675 0009 1B       		.uleb128 0x1b
+ 2676 000a 0E       		.uleb128 0xe
+ 2677 000b 55       		.uleb128 0x55
+ 2678 000c 17       		.uleb128 0x17
+ 2679 000d 11       		.uleb128 0x11
+ 2680 000e 01       		.uleb128 0x1
+ 2681 000f 10       		.uleb128 0x10
+ 2682 0010 17       		.uleb128 0x17
+ 2683 0011 00       		.byte	0
+ 2684 0012 00       		.byte	0
+ 2685 0013 02       		.uleb128 0x2
+ 2686 0014 24       		.uleb128 0x24
+ 2687 0015 00       		.byte	0
+ 2688 0016 0B       		.uleb128 0xb
+ 2689 0017 0B       		.uleb128 0xb
+ 2690 0018 3E       		.uleb128 0x3e
+ 2691 0019 0B       		.uleb128 0xb
+ 2692 001a 03       		.uleb128 0x3
+ 2693 001b 0E       		.uleb128 0xe
+ 2694 001c 00       		.byte	0
+ 2695 001d 00       		.byte	0
+ 2696 001e 03       		.uleb128 0x3
+ 2697 001f 16       		.uleb128 0x16
+ 2698 0020 00       		.byte	0
+ 2699 0021 03       		.uleb128 0x3
+ 2700 0022 0E       		.uleb128 0xe
+ 2701 0023 3A       		.uleb128 0x3a
+ 2702 0024 0B       		.uleb128 0xb
+ 2703 0025 3B       		.uleb128 0x3b
+ 2704 0026 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 53
+
+
+ 2705 0027 49       		.uleb128 0x49
+ 2706 0028 13       		.uleb128 0x13
+ 2707 0029 00       		.byte	0
+ 2708 002a 00       		.byte	0
+ 2709 002b 04       		.uleb128 0x4
+ 2710 002c 24       		.uleb128 0x24
+ 2711 002d 00       		.byte	0
+ 2712 002e 0B       		.uleb128 0xb
+ 2713 002f 0B       		.uleb128 0xb
+ 2714 0030 3E       		.uleb128 0x3e
+ 2715 0031 0B       		.uleb128 0xb
+ 2716 0032 03       		.uleb128 0x3
+ 2717 0033 08       		.uleb128 0x8
+ 2718 0034 00       		.byte	0
+ 2719 0035 00       		.byte	0
+ 2720 0036 05       		.uleb128 0x5
+ 2721 0037 2E       		.uleb128 0x2e
+ 2722 0038 00       		.byte	0
+ 2723 0039 3F       		.uleb128 0x3f
+ 2724 003a 19       		.uleb128 0x19
+ 2725 003b 03       		.uleb128 0x3
+ 2726 003c 0E       		.uleb128 0xe
+ 2727 003d 3A       		.uleb128 0x3a
+ 2728 003e 0B       		.uleb128 0xb
+ 2729 003f 3B       		.uleb128 0x3b
+ 2730 0040 0B       		.uleb128 0xb
+ 2731 0041 27       		.uleb128 0x27
+ 2732 0042 19       		.uleb128 0x19
+ 2733 0043 11       		.uleb128 0x11
+ 2734 0044 01       		.uleb128 0x1
+ 2735 0045 12       		.uleb128 0x12
+ 2736 0046 06       		.uleb128 0x6
+ 2737 0047 40       		.uleb128 0x40
+ 2738 0048 18       		.uleb128 0x18
+ 2739 0049 9742     		.uleb128 0x2117
+ 2740 004b 19       		.uleb128 0x19
+ 2741 004c 00       		.byte	0
+ 2742 004d 00       		.byte	0
+ 2743 004e 06       		.uleb128 0x6
+ 2744 004f 2E       		.uleb128 0x2e
+ 2745 0050 01       		.byte	0x1
+ 2746 0051 3F       		.uleb128 0x3f
+ 2747 0052 19       		.uleb128 0x19
+ 2748 0053 03       		.uleb128 0x3
+ 2749 0054 0E       		.uleb128 0xe
+ 2750 0055 3A       		.uleb128 0x3a
+ 2751 0056 0B       		.uleb128 0xb
+ 2752 0057 3B       		.uleb128 0x3b
+ 2753 0058 0B       		.uleb128 0xb
+ 2754 0059 27       		.uleb128 0x27
+ 2755 005a 19       		.uleb128 0x19
+ 2756 005b 11       		.uleb128 0x11
+ 2757 005c 01       		.uleb128 0x1
+ 2758 005d 12       		.uleb128 0x12
+ 2759 005e 06       		.uleb128 0x6
+ 2760 005f 40       		.uleb128 0x40
+ 2761 0060 18       		.uleb128 0x18
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 54
+
+
+ 2762 0061 9742     		.uleb128 0x2117
+ 2763 0063 19       		.uleb128 0x19
+ 2764 0064 01       		.uleb128 0x1
+ 2765 0065 13       		.uleb128 0x13
+ 2766 0066 00       		.byte	0
+ 2767 0067 00       		.byte	0
+ 2768 0068 07       		.uleb128 0x7
+ 2769 0069 898201   		.uleb128 0x4109
+ 2770 006c 00       		.byte	0
+ 2771 006d 11       		.uleb128 0x11
+ 2772 006e 01       		.uleb128 0x1
+ 2773 006f 31       		.uleb128 0x31
+ 2774 0070 13       		.uleb128 0x13
+ 2775 0071 00       		.byte	0
+ 2776 0072 00       		.byte	0
+ 2777 0073 08       		.uleb128 0x8
+ 2778 0074 2E       		.uleb128 0x2e
+ 2779 0075 01       		.byte	0x1
+ 2780 0076 3F       		.uleb128 0x3f
+ 2781 0077 19       		.uleb128 0x19
+ 2782 0078 03       		.uleb128 0x3
+ 2783 0079 0E       		.uleb128 0xe
+ 2784 007a 3A       		.uleb128 0x3a
+ 2785 007b 0B       		.uleb128 0xb
+ 2786 007c 3B       		.uleb128 0x3b
+ 2787 007d 0B       		.uleb128 0xb
+ 2788 007e 11       		.uleb128 0x11
+ 2789 007f 01       		.uleb128 0x1
+ 2790 0080 12       		.uleb128 0x12
+ 2791 0081 06       		.uleb128 0x6
+ 2792 0082 40       		.uleb128 0x40
+ 2793 0083 18       		.uleb128 0x18
+ 2794 0084 9742     		.uleb128 0x2117
+ 2795 0086 19       		.uleb128 0x19
+ 2796 0087 01       		.uleb128 0x1
+ 2797 0088 13       		.uleb128 0x13
+ 2798 0089 00       		.byte	0
+ 2799 008a 00       		.byte	0
+ 2800 008b 09       		.uleb128 0x9
+ 2801 008c 05       		.uleb128 0x5
+ 2802 008d 00       		.byte	0
+ 2803 008e 03       		.uleb128 0x3
+ 2804 008f 08       		.uleb128 0x8
+ 2805 0090 3A       		.uleb128 0x3a
+ 2806 0091 0B       		.uleb128 0xb
+ 2807 0092 3B       		.uleb128 0x3b
+ 2808 0093 0B       		.uleb128 0xb
+ 2809 0094 49       		.uleb128 0x49
+ 2810 0095 13       		.uleb128 0x13
+ 2811 0096 02       		.uleb128 0x2
+ 2812 0097 17       		.uleb128 0x17
+ 2813 0098 00       		.byte	0
+ 2814 0099 00       		.byte	0
+ 2815 009a 0A       		.uleb128 0xa
+ 2816 009b 34       		.uleb128 0x34
+ 2817 009c 00       		.byte	0
+ 2818 009d 03       		.uleb128 0x3
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 55
+
+
+ 2819 009e 0E       		.uleb128 0xe
+ 2820 009f 3A       		.uleb128 0x3a
+ 2821 00a0 0B       		.uleb128 0xb
+ 2822 00a1 3B       		.uleb128 0x3b
+ 2823 00a2 0B       		.uleb128 0xb
+ 2824 00a3 49       		.uleb128 0x49
+ 2825 00a4 13       		.uleb128 0x13
+ 2826 00a5 02       		.uleb128 0x2
+ 2827 00a6 18       		.uleb128 0x18
+ 2828 00a7 00       		.byte	0
+ 2829 00a8 00       		.byte	0
+ 2830 00a9 0B       		.uleb128 0xb
+ 2831 00aa 898201   		.uleb128 0x4109
+ 2832 00ad 01       		.byte	0x1
+ 2833 00ae 11       		.uleb128 0x11
+ 2834 00af 01       		.uleb128 0x1
+ 2835 00b0 31       		.uleb128 0x31
+ 2836 00b1 13       		.uleb128 0x13
+ 2837 00b2 01       		.uleb128 0x1
+ 2838 00b3 13       		.uleb128 0x13
+ 2839 00b4 00       		.byte	0
+ 2840 00b5 00       		.byte	0
+ 2841 00b6 0C       		.uleb128 0xc
+ 2842 00b7 8A8201   		.uleb128 0x410a
+ 2843 00ba 00       		.byte	0
+ 2844 00bb 02       		.uleb128 0x2
+ 2845 00bc 18       		.uleb128 0x18
+ 2846 00bd 9142     		.uleb128 0x2111
+ 2847 00bf 18       		.uleb128 0x18
+ 2848 00c0 00       		.byte	0
+ 2849 00c1 00       		.byte	0
+ 2850 00c2 0D       		.uleb128 0xd
+ 2851 00c3 898201   		.uleb128 0x4109
+ 2852 00c6 01       		.byte	0x1
+ 2853 00c7 11       		.uleb128 0x11
+ 2854 00c8 01       		.uleb128 0x1
+ 2855 00c9 31       		.uleb128 0x31
+ 2856 00ca 13       		.uleb128 0x13
+ 2857 00cb 00       		.byte	0
+ 2858 00cc 00       		.byte	0
+ 2859 00cd 0E       		.uleb128 0xe
+ 2860 00ce 01       		.uleb128 0x1
+ 2861 00cf 01       		.byte	0x1
+ 2862 00d0 49       		.uleb128 0x49
+ 2863 00d1 13       		.uleb128 0x13
+ 2864 00d2 01       		.uleb128 0x1
+ 2865 00d3 13       		.uleb128 0x13
+ 2866 00d4 00       		.byte	0
+ 2867 00d5 00       		.byte	0
+ 2868 00d6 0F       		.uleb128 0xf
+ 2869 00d7 21       		.uleb128 0x21
+ 2870 00d8 00       		.byte	0
+ 2871 00d9 49       		.uleb128 0x49
+ 2872 00da 13       		.uleb128 0x13
+ 2873 00db 2F       		.uleb128 0x2f
+ 2874 00dc 0B       		.uleb128 0xb
+ 2875 00dd 00       		.byte	0
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 56
+
+
+ 2876 00de 00       		.byte	0
+ 2877 00df 10       		.uleb128 0x10
+ 2878 00e0 2E       		.uleb128 0x2e
+ 2879 00e1 01       		.byte	0x1
+ 2880 00e2 3F       		.uleb128 0x3f
+ 2881 00e3 19       		.uleb128 0x19
+ 2882 00e4 03       		.uleb128 0x3
+ 2883 00e5 0E       		.uleb128 0xe
+ 2884 00e6 3A       		.uleb128 0x3a
+ 2885 00e7 0B       		.uleb128 0xb
+ 2886 00e8 3B       		.uleb128 0x3b
+ 2887 00e9 0B       		.uleb128 0xb
+ 2888 00ea 27       		.uleb128 0x27
+ 2889 00eb 19       		.uleb128 0x19
+ 2890 00ec 49       		.uleb128 0x49
+ 2891 00ed 13       		.uleb128 0x13
+ 2892 00ee 8701     		.uleb128 0x87
+ 2893 00f0 19       		.uleb128 0x19
+ 2894 00f1 11       		.uleb128 0x11
+ 2895 00f2 01       		.uleb128 0x1
+ 2896 00f3 12       		.uleb128 0x12
+ 2897 00f4 06       		.uleb128 0x6
+ 2898 00f5 40       		.uleb128 0x40
+ 2899 00f6 18       		.uleb128 0x18
+ 2900 00f7 9642     		.uleb128 0x2116
+ 2901 00f9 19       		.uleb128 0x19
+ 2902 00fa 01       		.uleb128 0x1
+ 2903 00fb 13       		.uleb128 0x13
+ 2904 00fc 00       		.byte	0
+ 2905 00fd 00       		.byte	0
+ 2906 00fe 11       		.uleb128 0x11
+ 2907 00ff 34       		.uleb128 0x34
+ 2908 0100 00       		.byte	0
+ 2909 0101 03       		.uleb128 0x3
+ 2910 0102 0E       		.uleb128 0xe
+ 2911 0103 3A       		.uleb128 0x3a
+ 2912 0104 0B       		.uleb128 0xb
+ 2913 0105 3B       		.uleb128 0x3b
+ 2914 0106 05       		.uleb128 0x5
+ 2915 0107 49       		.uleb128 0x49
+ 2916 0108 13       		.uleb128 0x13
+ 2917 0109 3F       		.uleb128 0x3f
+ 2918 010a 19       		.uleb128 0x19
+ 2919 010b 3C       		.uleb128 0x3c
+ 2920 010c 19       		.uleb128 0x19
+ 2921 010d 00       		.byte	0
+ 2922 010e 00       		.byte	0
+ 2923 010f 12       		.uleb128 0x12
+ 2924 0110 35       		.uleb128 0x35
+ 2925 0111 00       		.byte	0
+ 2926 0112 49       		.uleb128 0x49
+ 2927 0113 13       		.uleb128 0x13
+ 2928 0114 00       		.byte	0
+ 2929 0115 00       		.byte	0
+ 2930 0116 13       		.uleb128 0x13
+ 2931 0117 34       		.uleb128 0x34
+ 2932 0118 00       		.byte	0
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 57
+
+
+ 2933 0119 03       		.uleb128 0x3
+ 2934 011a 0E       		.uleb128 0xe
+ 2935 011b 3A       		.uleb128 0x3a
+ 2936 011c 0B       		.uleb128 0xb
+ 2937 011d 3B       		.uleb128 0x3b
+ 2938 011e 0B       		.uleb128 0xb
+ 2939 011f 49       		.uleb128 0x49
+ 2940 0120 13       		.uleb128 0x13
+ 2941 0121 3F       		.uleb128 0x3f
+ 2942 0122 19       		.uleb128 0x19
+ 2943 0123 02       		.uleb128 0x2
+ 2944 0124 18       		.uleb128 0x18
+ 2945 0125 00       		.byte	0
+ 2946 0126 00       		.byte	0
+ 2947 0127 14       		.uleb128 0x14
+ 2948 0128 34       		.uleb128 0x34
+ 2949 0129 00       		.byte	0
+ 2950 012a 03       		.uleb128 0x3
+ 2951 012b 08       		.uleb128 0x8
+ 2952 012c 3A       		.uleb128 0x3a
+ 2953 012d 0B       		.uleb128 0xb
+ 2954 012e 3B       		.uleb128 0x3b
+ 2955 012f 0B       		.uleb128 0xb
+ 2956 0130 49       		.uleb128 0x49
+ 2957 0131 13       		.uleb128 0x13
+ 2958 0132 3F       		.uleb128 0x3f
+ 2959 0133 19       		.uleb128 0x19
+ 2960 0134 02       		.uleb128 0x2
+ 2961 0135 18       		.uleb128 0x18
+ 2962 0136 00       		.byte	0
+ 2963 0137 00       		.byte	0
+ 2964 0138 15       		.uleb128 0x15
+ 2965 0139 2E       		.uleb128 0x2e
+ 2966 013a 00       		.byte	0
+ 2967 013b 3F       		.uleb128 0x3f
+ 2968 013c 19       		.uleb128 0x19
+ 2969 013d 3C       		.uleb128 0x3c
+ 2970 013e 19       		.uleb128 0x19
+ 2971 013f 6E       		.uleb128 0x6e
+ 2972 0140 0E       		.uleb128 0xe
+ 2973 0141 03       		.uleb128 0x3
+ 2974 0142 0E       		.uleb128 0xe
+ 2975 0143 3A       		.uleb128 0x3a
+ 2976 0144 0B       		.uleb128 0xb
+ 2977 0145 3B       		.uleb128 0x3b
+ 2978 0146 0B       		.uleb128 0xb
+ 2979 0147 00       		.byte	0
+ 2980 0148 00       		.byte	0
+ 2981 0149 00       		.byte	0
+ 2982              		.section	.debug_loc,"",%progbits
+ 2983              	.Ldebug_loc0:
+ 2984              	.LLST0:
+ 2985 0000 00000000 		.4byte	.LVL1
+ 2986 0004 0B000000 		.4byte	.LVL2-1
+ 2987 0008 0100     		.2byte	0x1
+ 2988 000a 50       		.byte	0x50
+ 2989 000b 0B000000 		.4byte	.LVL2-1
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 58
+
+
+ 2990 000f 18000000 		.4byte	.LFE70
+ 2991 0013 0400     		.2byte	0x4
+ 2992 0015 F3       		.byte	0xf3
+ 2993 0016 01       		.uleb128 0x1
+ 2994 0017 50       		.byte	0x50
+ 2995 0018 9F       		.byte	0x9f
+ 2996 0019 00000000 		.4byte	0
+ 2997 001d 00000000 		.4byte	0
+ 2998              		.section	.debug_aranges,"",%progbits
+ 2999 0000 5C000000 		.4byte	0x5c
+ 3000 0004 0200     		.2byte	0x2
+ 3001 0006 00000000 		.4byte	.Ldebug_info0
+ 3002 000a 04       		.byte	0x4
+ 3003 000b 00       		.byte	0
+ 3004 000c 0000     		.2byte	0
+ 3005 000e 0000     		.2byte	0
+ 3006 0010 00000000 		.4byte	.LFB64
+ 3007 0014 10000000 		.4byte	.LFE64-.LFB64
+ 3008 0018 00000000 		.4byte	.LFB65
+ 3009 001c 10000000 		.4byte	.LFE65-.LFB65
+ 3010 0020 00000000 		.4byte	.LFB66
+ 3011 0024 10000000 		.4byte	.LFE66-.LFB66
+ 3012 0028 00000000 		.4byte	.LFB67
+ 3013 002c 10000000 		.4byte	.LFE67-.LFB67
+ 3014 0030 00000000 		.4byte	.LFB68
+ 3015 0034 0C000000 		.4byte	.LFE68-.LFB68
+ 3016 0038 00000000 		.4byte	.LFB69
+ 3017 003c 0C000000 		.4byte	.LFE69-.LFB69
+ 3018 0040 00000000 		.4byte	.LFB63
+ 3019 0044 28000000 		.4byte	.LFE63-.LFB63
+ 3020 0048 00000000 		.4byte	.LFB70
+ 3021 004c 18000000 		.4byte	.LFE70-.LFB70
+ 3022 0050 00000000 		.4byte	.LFB71
+ 3023 0054 68040000 		.4byte	.LFE71-.LFB71
+ 3024 0058 00000000 		.4byte	0
+ 3025 005c 00000000 		.4byte	0
+ 3026              		.section	.debug_ranges,"",%progbits
+ 3027              	.Ldebug_ranges0:
+ 3028 0000 00000000 		.4byte	.LFB64
+ 3029 0004 10000000 		.4byte	.LFE64
+ 3030 0008 00000000 		.4byte	.LFB65
+ 3031 000c 10000000 		.4byte	.LFE65
+ 3032 0010 00000000 		.4byte	.LFB66
+ 3033 0014 10000000 		.4byte	.LFE66
+ 3034 0018 00000000 		.4byte	.LFB67
+ 3035 001c 10000000 		.4byte	.LFE67
+ 3036 0020 00000000 		.4byte	.LFB68
+ 3037 0024 0C000000 		.4byte	.LFE68
+ 3038 0028 00000000 		.4byte	.LFB69
+ 3039 002c 0C000000 		.4byte	.LFE69
+ 3040 0030 00000000 		.4byte	.LFB63
+ 3041 0034 28000000 		.4byte	.LFE63
+ 3042 0038 00000000 		.4byte	.LFB70
+ 3043 003c 18000000 		.4byte	.LFE70
+ 3044 0040 00000000 		.4byte	.LFB71
+ 3045 0044 68040000 		.4byte	.LFE71
+ 3046 0048 00000000 		.4byte	0
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 59
+
+
+ 3047 004c 00000000 		.4byte	0
+ 3048              		.section	.debug_line,"",%progbits
+ 3049              	.Ldebug_line0:
+ 3050 0000 C5030000 		.section	.debug_str,"MS",%progbits,1
+ 3050      02003E02 
+ 3050      00000201 
+ 3050      FB0E0D00 
+ 3050      01010101 
+ 3051              	.LASF31:
+ 3052 0000 4D595630 		.ascii	"MYV00\000"
+ 3052      3000
+ 3053              	.LASF24:
+ 3054 0006 636F756E 		.ascii	"counta\000"
+ 3054      746100
+ 3055              	.LASF25:
+ 3056 000d 636F756E 		.ascii	"countb\000"
+ 3056      746200
+ 3057              	.LASF35:
+ 3058 0014 73736178 		.ascii	"ssax\000"
+ 3058      00
+ 3059              	.LASF51:
+ 3060 0019 73736179 		.ascii	"ssay\000"
+ 3060      00
+ 3061              	.LASF86:
+ 3062 001e 42315F57 		.ascii	"B1_Write\000"
+ 3062      72697465 
+ 3062      00
+ 3063              	.LASF76:
+ 3064 0027 69737258 		.ascii	"isrXL_StartEx\000"
+ 3064      4C5F5374 
+ 3064      61727445 
+ 3064      7800
+ 3065              	.LASF55:
+ 3066 0035 72656673 		.ascii	"refsy\000"
+ 3066      7900
+ 3067              	.LASF92:
+ 3068 003b 496E7465 		.ascii	"InterruptRX\000"
+ 3068      72727570 
+ 3068      74525800 
+ 3069              	.LASF2:
+ 3070 0047 73686F72 		.ascii	"short int\000"
+ 3070      7420696E 
+ 3070      7400
+ 3071              	.LASF29:
+ 3072 0051 4D595630 		.ascii	"MYV0\000"
+ 3072      00
+ 3073              	.LASF15:
+ 3074 0056 73697A65 		.ascii	"sizetype\000"
+ 3074      74797065 
+ 3074      00
+ 3075              	.LASF79:
+ 3076 005f 69737258 		.ascii	"isrX_StartEx\000"
+ 3076      5F537461 
+ 3076      72744578 
+ 3076      00
+ 3077              	.LASF95:
+ 3078 006c 6D61696E 		.ascii	"main\000"
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 60
+
+
+ 3078      00
+ 3079              	.LASF94:
+ 3080 0071 62756666 		.ascii	"buff\000"
+ 3080      00
+ 3081              	.LASF50:
+ 3082 0076 72657465 		.ascii	"reteaax\000"
+ 3082      61617800 
+ 3083              	.LASF66:
+ 3084 007e 72657465 		.ascii	"reteaay\000"
+ 3084      61617900 
+ 3085              	.LASF80:
+ 3086 0086 69737259 		.ascii	"isrY_StartEx\000"
+ 3086      5F537461 
+ 3086      72744578 
+ 3086      00
+ 3087              	.LASF73:
+ 3088 0093 436C6F63 		.ascii	"Clock_1_Start\000"
+ 3088      6B5F315F 
+ 3088      53746172 
+ 3088      7400
+ 3089              	.LASF34:
+ 3090 00a1 72666161 		.ascii	"rfaa\000"
+ 3090      00
+ 3091              	.LASF23:
+ 3092 00a6 6461746F 		.ascii	"datorecibido\000"
+ 3092      72656369 
+ 3092      6269646F 
+ 3092      00
+ 3093              	.LASF68:
+ 3094 00b3 55415254 		.ascii	"UART_GetChar\000"
+ 3094      5F476574 
+ 3094      43686172 
+ 3094      00
+ 3095              	.LASF70:
+ 3096 00c0 55415254 		.ascii	"UART_PutString\000"
+ 3096      5F507574 
+ 3096      53747269 
+ 3096      6E6700
+ 3097              	.LASF75:
+ 3098 00cf 69737258 		.ascii	"isrXP_StartEx\000"
+ 3098      505F5374 
+ 3098      61727445 
+ 3098      7800
+ 3099              	.LASF74:
+ 3100 00dd 69737252 		.ascii	"isrRx_StartEx\000"
+ 3100      785F5374 
+ 3100      61727445 
+ 3100      7800
+ 3101              	.LASF87:
+ 3102 00eb 41325F57 		.ascii	"A2_Write\000"
+ 3102      72697465 
+ 3102      00
+ 3103              	.LASF44:
+ 3104 00f4 72656665 		.ascii	"refeaax\000"
+ 3104      61617800 
+ 3105              	.LASF60:
+ 3106 00fc 72656665 		.ascii	"refeaay\000"
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 61
+
+
+ 3106      61617900 
+ 3107              	.LASF21:
+ 3108 0104 496E7465 		.ascii	"InterruptY\000"
+ 3108      72727570 
+ 3108      745900
+ 3109              	.LASF11:
+ 3110 010f 666C6F61 		.ascii	"float\000"
+ 3110      7400
+ 3111              	.LASF6:
+ 3112 0115 6C6F6E67 		.ascii	"long long int\000"
+ 3112      206C6F6E 
+ 3112      6720696E 
+ 3112      7400
+ 3113              	.LASF42:
+ 3114 0123 72656665 		.ascii	"refex\000"
+ 3114      7800
+ 3115              	.LASF83:
+ 3116 0129 50574D5F 		.ascii	"PWM_WriteCompare1\000"
+ 3116      57726974 
+ 3116      65436F6D 
+ 3116      70617265 
+ 3116      3100
+ 3117              	.LASF93:
+ 3118 013b 55415254 		.ascii	"UART_writeint\000"
+ 3118      5F777269 
+ 3118      7465696E 
+ 3118      7400
+ 3119              	.LASF19:
+ 3120 0149 496E7465 		.ascii	"InterruptYP\000"
+ 3120      72727570 
+ 3120      74595000 
+ 3121              	.LASF4:
+ 3122 0155 6C6F6E67 		.ascii	"long int\000"
+ 3122      20696E74 
+ 3122      00
+ 3123              	.LASF38:
+ 3124 015e 73656161 		.ascii	"seaax\000"
+ 3124      7800
+ 3125              	.LASF28:
+ 3126 0164 4D585630 		.ascii	"MXV0\000"
+ 3126      00
+ 3127              	.LASF54:
+ 3128 0169 73656161 		.ascii	"seaay\000"
+ 3128      7900
+ 3129              	.LASF84:
+ 3130 016f 50574D5F 		.ascii	"PWM_WriteCompare2\000"
+ 3130      57726974 
+ 3130      65436F6D 
+ 3130      70617265 
+ 3130      3200
+ 3131              	.LASF45:
+ 3132 0181 72657473 		.ascii	"retsx\000"
+ 3132      7800
+ 3133              	.LASF61:
+ 3134 0187 72657473 		.ascii	"retsy\000"
+ 3134      7900
+ 3135              	.LASF14:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 62
+
+
+ 3136 018d 6C6F6E67 		.ascii	"long double\000"
+ 3136      20646F75 
+ 3136      626C6500 
+ 3137              	.LASF32:
+ 3138 0199 72657478 		.ascii	"retx\000"
+ 3138      00
+ 3139              	.LASF33:
+ 3140 019e 72657479 		.ascii	"rety\000"
+ 3140      00
+ 3141              	.LASF81:
+ 3142 01a3 61746F69 		.ascii	"atoi\000"
+ 3142      00
+ 3143              	.LASF1:
+ 3144 01a8 756E7369 		.ascii	"unsigned char\000"
+ 3144      676E6564 
+ 3144      20636861 
+ 3144      7200
+ 3145              	.LASF26:
+ 3146 01b6 70776D78 		.ascii	"pwmx\000"
+ 3146      00
+ 3147              	.LASF27:
+ 3148 01bb 70776D79 		.ascii	"pwmy\000"
+ 3148      00
+ 3149              	.LASF0:
+ 3150 01c0 7369676E 		.ascii	"signed char\000"
+ 3150      65642063 
+ 3150      68617200 
+ 3151              	.LASF10:
+ 3152 01cc 696E7433 		.ascii	"int32_t\000"
+ 3152      325F7400 
+ 3153              	.LASF7:
+ 3154 01d4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3154      206C6F6E 
+ 3154      6720756E 
+ 3154      7369676E 
+ 3154      65642069 
+ 3155              	.LASF69:
+ 3156 01eb 69746F61 		.ascii	"itoa\000"
+ 3156      00
+ 3157              	.LASF20:
+ 3158 01f0 496E7465 		.ascii	"InterruptX\000"
+ 3158      72727570 
+ 3158      745800
+ 3159              	.LASF8:
+ 3160 01fb 756E7369 		.ascii	"unsigned int\000"
+ 3160      676E6564 
+ 3160      20696E74 
+ 3160      00
+ 3161              	.LASF43:
+ 3162 0208 72656665 		.ascii	"refeax\000"
+ 3162      617800
+ 3163              	.LASF78:
+ 3164 020f 69737259 		.ascii	"isrYL_StartEx\000"
+ 3164      4C5F5374 
+ 3164      61727445 
+ 3164      7800
+ 3165              	.LASF59:
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 63
+
+
+ 3166 021d 72656665 		.ascii	"refeay\000"
+ 3166      617900
+ 3167              	.LASF46:
+ 3168 0224 72657473 		.ascii	"retsax\000"
+ 3168      617800
+ 3169              	.LASF62:
+ 3170 022b 72657473 		.ascii	"retsay\000"
+ 3170      617900
+ 3171              	.LASF88:
+ 3172 0232 42325F57 		.ascii	"B2_Write\000"
+ 3172      72697465 
+ 3172      00
+ 3173              	.LASF3:
+ 3174 023b 73686F72 		.ascii	"short unsigned int\000"
+ 3174      7420756E 
+ 3174      7369676E 
+ 3174      65642069 
+ 3174      6E7400
+ 3175              	.LASF58:
+ 3176 024e 72656665 		.ascii	"refey\000"
+ 3176      7900
+ 3177              	.LASF77:
+ 3178 0254 69737259 		.ascii	"isrYP_StartEx\000"
+ 3178      505F5374 
+ 3178      61727445 
+ 3178      7800
+ 3179              	.LASF13:
+ 3180 0262 63686172 		.ascii	"char\000"
+ 3180      00
+ 3181              	.LASF16:
+ 3182 0267 496E7465 		.ascii	"InterruptXL\000"
+ 3182      72727570 
+ 3182      74584C00 
+ 3183              	.LASF71:
+ 3184 0273 55415254 		.ascii	"UART_Start\000"
+ 3184      5F537461 
+ 3184      727400
+ 3185              	.LASF17:
+ 3186 027e 496E7465 		.ascii	"InterruptXP\000"
+ 3186      72727570 
+ 3186      74585000 
+ 3187              	.LASF37:
+ 3188 028a 73656178 		.ascii	"seax\000"
+ 3188      00
+ 3189              	.LASF9:
+ 3190 028f 5F5F696E 		.ascii	"__int32_t\000"
+ 3190      7433325F 
+ 3190      7400
+ 3191              	.LASF85:
+ 3192 0299 41315F57 		.ascii	"A1_Write\000"
+ 3192      72697465 
+ 3192      00
+ 3193              	.LASF48:
+ 3194 02a2 72657465 		.ascii	"retex\000"
+ 3194      7800
+ 3195              	.LASF64:
+ 3196 02a8 72657465 		.ascii	"retey\000"
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 64
+
+
+ 3196      7900
+ 3197              	.LASF90:
+ 3198 02ae 6D61696E 		.ascii	"main.c\000"
+ 3198      2E6300
+ 3199              	.LASF5:
+ 3200 02b5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3200      20756E73 
+ 3200      69676E65 
+ 3200      6420696E 
+ 3200      7400
+ 3201              	.LASF12:
+ 3202 02c7 646F7562 		.ascii	"double\000"
+ 3202      6C6500
+ 3203              	.LASF65:
+ 3204 02ce 72657465 		.ascii	"reteay\000"
+ 3204      617900
+ 3205              	.LASF47:
+ 3206 02d5 72657473 		.ascii	"retsaax\000"
+ 3206      61617800 
+ 3207              	.LASF63:
+ 3208 02dd 72657473 		.ascii	"retsaay\000"
+ 3208      61617900 
+ 3209              	.LASF67:
+ 3210 02e5 6461746F 		.ascii	"datoenviado\000"
+ 3210      656E7669 
+ 3210      61646F00 
+ 3211              	.LASF36:
+ 3212 02f1 73736161 		.ascii	"ssaax\000"
+ 3212      7800
+ 3213              	.LASF52:
+ 3214 02f7 73736161 		.ascii	"ssaay\000"
+ 3214      7900
+ 3215              	.LASF72:
+ 3216 02fd 50574D5F 		.ascii	"PWM_Start\000"
+ 3216      53746172 
+ 3216      7400
+ 3217              	.LASF41:
+ 3218 0307 72656673 		.ascii	"refsaax\000"
+ 3218      61617800 
+ 3219              	.LASF57:
+ 3220 030f 72656673 		.ascii	"refsaay\000"
+ 3220      61617900 
+ 3221              	.LASF30:
+ 3222 0317 4D585630 		.ascii	"MXV00\000"
+ 3222      3000
+ 3223              	.LASF18:
+ 3224 031d 496E7465 		.ascii	"InterruptYL\000"
+ 3224      72727570 
+ 3224      74594C00 
+ 3225              	.LASF49:
+ 3226 0329 72657465 		.ascii	"reteax\000"
+ 3226      617800
+ 3227              	.LASF91:
+ 3228 0330 433A5C55 		.ascii	"C:\\Users\\Klukk-TP\\Documents\\tesis\\psoc\\psoc R"
+ 3228      73657273 
+ 3228      5C4B6C75 
+ 3228      6B6B2D54 
+ARM GAS  C:\Users\Klukk-TP\AppData\Local\Temp\ccRWjMht.s 			page 65
+
+
+ 3228      505C446F 
+ 3229 035d 53545C44 		.ascii	"ST\\Design01.cydsn\000"
+ 3229      65736967 
+ 3229      6E30312E 
+ 3229      63796473 
+ 3229      6E00
+ 3230              	.LASF39:
+ 3231 036f 72656673 		.ascii	"refsx\000"
+ 3231      7800
+ 3232              	.LASF22:
+ 3233 0375 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3233      52784275 
+ 3233      66666572 
+ 3233      00
+ 3234              	.LASF89:
+ 3235 0382 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3235      43313120 
+ 3235      352E342E 
+ 3235      31203230 
+ 3235      31363036 
+ 3236 03b5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3236      20726576 
+ 3236      6973696F 
+ 3236      6E203233 
+ 3236      37373135 
+ 3237 03e8 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3237      66756E63 
+ 3237      74696F6E 
+ 3237      2D736563 
+ 3237      74696F6E 
+ 3238              	.LASF40:
+ 3239 0410 72656673 		.ascii	"refsax\000"
+ 3239      617800
+ 3240              	.LASF56:
+ 3241 0417 72656673 		.ascii	"refsay\000"
+ 3241      617900
+ 3242              	.LASF53:
+ 3243 041e 73656179 		.ascii	"seay\000"
+ 3243      00
+ 3244              	.LASF82:
+ 3245 0423 55415254 		.ascii	"UART_PutChar\000"
+ 3245      5F507574 
+ 3245      43686172 
+ 3245      00
+ 3246              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
